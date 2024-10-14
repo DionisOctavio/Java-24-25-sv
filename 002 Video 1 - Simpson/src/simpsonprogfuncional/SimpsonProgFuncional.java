@@ -53,12 +53,12 @@
 
                 tablero[filaleatorioHomer][columnaaleatorioHomer] = 'H';
             }
+
             System.out.println(" ");
             System.out.println(" ");
             System.out.println(" ");
 
             imprimirTablero();
-
 
             //8º repartir 10 homers dentro del tablero
             int filaleatorioMuro;
@@ -73,11 +73,15 @@
                 tablero[filaleatorioMuro][columnaaleatorioMuro] = 'M';
             }
 
+            System.out.println(" ");
+            System.out.println(" ");
+            System.out.println(" ");
+
             imprimirTablero();
 
         }
 
-
+        // 0º Imprimir Tablero
         private static void imprimirTablero() {
             for (int i = 0; i <MAX_FILA_TABLERO; i++) {
                 for (int j = 0; j <MAX_COLUMNA_TABLERO; j++) {

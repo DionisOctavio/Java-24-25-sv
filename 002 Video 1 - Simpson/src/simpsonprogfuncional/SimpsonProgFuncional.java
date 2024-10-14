@@ -79,6 +79,13 @@
 
             imprimirTablero();
 
+            tablero[MAX_FILA_TABLERO-1][MAX_COLUMNA_TABLERO-1] = 'F';
+
+            System.out.println(" ");
+            System.out.println(" ");
+            System.out.println(" ");
+
+            imprimirTablero();
         }
 
         // 0º Imprimir Tablero

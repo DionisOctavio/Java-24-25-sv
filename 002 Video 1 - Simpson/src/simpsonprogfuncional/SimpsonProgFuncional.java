@@ -19,12 +19,7 @@
                 }
             }
             //3º imprimir tablero
-            for (int i = 0; i <MAX_FILA_TABLERO; i++) {
-                for (int j = 0; j <MAX_COLUMNA_TABLERO; j++) {
-                    System.out.print(tablero[i][j] + " ");
-                }
-                System.out.println(" ");
-            }
+            imprimirTablero();
 
             System.out.println(" ");
             System.out.println(" ");
@@ -38,15 +33,57 @@
             tablero[filaleatorio][columnaaleatorio] = 'B';
 
             //5º imprimir tablero
+            System.out.println(" ");
+            System.out.println(" ");
+            System.out.println(" ");
+
+            imprimirTablero();
+
+
+
+            //6º repartir 10 homers dentro del tablero
+            int filaleatorioHomer;
+            int columnaaleatorioHomer;
+            for (int i = 0; i < 10; i++) {
+                do {
+                    filaleatorioHomer = aleatorio.nextInt(MAX_FILA_TABLERO);
+                    columnaaleatorioHomer = aleatorio.nextInt(MAX_COLUMNA_TABLERO);
+
+                }while (tablero[filaleatorioHomer][columnaaleatorioHomer]!='L');
+
+                tablero[filaleatorioHomer][columnaaleatorioHomer] = 'H';
+            }
+            System.out.println(" ");
+            System.out.println(" ");
+            System.out.println(" ");
+
+            imprimirTablero();
+
+
+            //8º repartir 10 homers dentro del tablero
+            int filaleatorioMuro;
+            int columnaaleatorioMuro;
+            for (int i = 0; i < 10; i++) {
+                do {
+                    filaleatorioMuro = aleatorio.nextInt(MAX_FILA_TABLERO);
+                    columnaaleatorioMuro = aleatorio.nextInt(MAX_COLUMNA_TABLERO);
+
+                }while (tablero[filaleatorioMuro][columnaaleatorioMuro]!='L');
+
+                tablero[filaleatorioMuro][columnaaleatorioMuro] = 'M';
+            }
+
+            imprimirTablero();
+
+        }
+
+
+        private static void imprimirTablero() {
             for (int i = 0; i <MAX_FILA_TABLERO; i++) {
                 for (int j = 0; j <MAX_COLUMNA_TABLERO; j++) {
                     System.out.print(tablero[i][j] + " ");
                 }
                 System.out.println(" ");
             }
-
-
-            //6º repartir 10 homers dentro del tablero
-
         }
     }

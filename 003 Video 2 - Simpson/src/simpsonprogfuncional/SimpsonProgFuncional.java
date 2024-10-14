@@ -78,7 +78,7 @@
             System.out.println(" ");
 
             imprimirTablero();
-            // Final
+
             tablero[MAX_FILA_TABLERO-1][MAX_COLUMNA_TABLERO-1] = 'F';
 
             System.out.println(" ");

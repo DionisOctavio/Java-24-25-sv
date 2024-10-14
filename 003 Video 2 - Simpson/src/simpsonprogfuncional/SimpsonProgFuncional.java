@@ -26,28 +26,34 @@ public class SimpsonProgFuncional {
         }
     }
 
-    private static void asignarBartACasillasLibre (char caracter) {
+    private static void asignarPersonajesACasillasLibre (char caracter, int numRepeticiones) {
         Random aleatorio = new Random();
-        int filaleatorio = aleatorio.nextInt(MAX_FILA_TABLERO);
-        int columnaaleatorio = aleatorio.nextInt(MAX_COLUMNA_TABLERO);
-
-        tablero[filaleatorio][columnaaleatorio] = caracter;
-    }
-
-    private static void asignarCaracterACasillasLibres (char caracter) {
-        Random aleatorio = new Random();
-        int filaleatorioHomer;
-        int columnaaleatorioHomer;
-        for (int i = 0; i < 10; i++) {
+        int filaaleatoria;
+        int columnaaleatoria;
+        for (int i = 0; i <numRepeticiones; i++) {
             do {
-                filaleatorioHomer = aleatorio.nextInt(MAX_FILA_TABLERO);
-                columnaaleatorioHomer = aleatorio.nextInt(MAX_COLUMNA_TABLERO);
+                filaaleatoria = aleatorio.nextInt(MAX_FILA_TABLERO);
+                columnaaleatoria = aleatorio.nextInt(MAX_COLUMNA_TABLERO);
 
-            }while (tablero[filaleatorioHomer][columnaaleatorioHomer]!='L');
-
-            tablero[filaleatorioHomer][columnaaleatorioHomer] = caracter;
+            }while (tablero[filaaleatoria][columnaaleatoria]!='L');
+            tablero[filaaleatoria][columnaaleatoria] = caracter;
         }
     }
+
+//    private static void asignarCaracterACasillasLibres (char caracter) {
+//        Random aleatorio = new Random();
+//        int filaleatorioHomer;
+//        int columnaaleatorioHomer;
+//        for (int i = 0; i < 10; i++) {
+//            do {
+//                filaleatorioHomer = aleatorio.nextInt(MAX_FILA_TABLERO);
+//                columnaaleatorioHomer = aleatorio.nextInt(MAX_COLUMNA_TABLERO);
+//
+//            }while (tablero[filaleatorioHomer][columnaaleatorioHomer]!='L');
+//
+//            tablero[filaleatorioHomer][columnaaleatorioHomer] = caracter;
+//        }
+//    }
 
     public static void main(String[] args) {
         //1º inicio matriz tablero
@@ -61,7 +67,7 @@ public class SimpsonProgFuncional {
         imprimirTablero();
 
         //3º Asigno a bart
-        asignarBartACasillasLibre('B');
+        asignarPersonajesACasillasLibre('B', 1);
 
         System.out.println();
 
@@ -69,7 +75,7 @@ public class SimpsonProgFuncional {
 
 
         //4º Asigno a 10 Homers
-        asignarCaracterACasillasLibres('H');
+        asignarPersonajesACasillasLibre('H', 10);
 
         System.out.println();
 
@@ -77,7 +83,7 @@ public class SimpsonProgFuncional {
 
 
         //5º Creo 10 Muros
-        asignarCaracterACasillasLibres('M');
+        asignarPersonajesACasillasLibre('M', 10);
 
         System.out.println();
 

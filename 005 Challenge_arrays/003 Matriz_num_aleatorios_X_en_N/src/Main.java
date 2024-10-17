@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -32,5 +33,20 @@ public class Main {
         matrizNumerosAleatrios(10);
         imprimirTablero();
 
+        for (int i = 0; i < 3; i++) {
+            Scanner lector = new Scanner(System.in);
+            System.out.print("Ingrese el valor: ");
+            String num = lector.nextLine();
+
+            for (int a = 0; a < FILA; a++) {
+                for (int b = 0; b < COLUMNA; b++) {
+                    if (num == matrizNumAleatorio[a][b]){
+                        matrizNumAleatorio[a][b] = 'X';
+                    }
+                }
+            }
+
+
+        }
     }
 }

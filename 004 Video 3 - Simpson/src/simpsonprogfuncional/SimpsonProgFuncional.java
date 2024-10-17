@@ -32,15 +32,15 @@ public class SimpsonProgFuncional {
         Random aleatorio = new Random();
         int filaaleatoria = -1;
         int columnaaleatoria = -1;
-        for (int i = 0; i <numRepeticiones; i++) {
+        for (int i = 0; i < numRepeticiones; i++) {
             do {
                 filaaleatoria = aleatorio.nextInt(MAX_FILA_TABLERO);
                 columnaaleatoria = aleatorio.nextInt(MAX_COLUMNA_TABLERO);
 
-            }while (tablero[filaaleatoria][columnaaleatoria]!='L');
+            } while (tablero[filaaleatoria][columnaaleatoria] != 'L');
             tablero[filaaleatoria][columnaaleatoria] = caracter;
         }
-        if (caracter=='B') {
+        if (caracter == 'B') {
             filaBart = filaaleatoria;
             columnBart = columnaaleatoria;
         }
@@ -107,6 +107,7 @@ public class SimpsonProgFuncional {
         /*S--> Abajo*/
         /*D--> Derecha*/
         /*W--> Arriba*/
+
 
 
         Scanner lector = new Scanner(System.in);
@@ -212,7 +213,7 @@ public class SimpsonProgFuncional {
                     break;
                 default:
                     break;
-            }
+
             imprimirTablero();
         }while (vidas>0);
     }

@@ -3,43 +3,51 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        Random ale = new Random();
-        Scanner leer = new Scanner(System.in);
-        int intento = 6;
-
-        String arrayPrimitiva[] = new String[6];
-        for (int i = 0; i < arrayPrimitiva.length; i++) {
-            int numAle = ale.nextInt(100);
-            arrayPrimitiva[i] = String.valueOf(numAle);
-        }
-
-        for (int i = 0; i < arrayPrimitiva.length; i++) {
-            System.out.print(arrayPrimitiva[i] + " ");
-        }
-
-        System.out.println();
-
-        do {
-            System.out.println("Intentos: " + intento);
-            System.out.println("Dame un Numerin");
-            String usuario = leer.next();
-            for (int i = 0; i < arrayPrimitiva.length; i++) {
-                if (usuario.equals(arrayPrimitiva[i])) {
-                    arrayPrimitiva[i] = "XX";
-                }
+    private static char[][] tablero;
+    private static final int FILA = 5;
+    private static final int COLUMNA = 5;
+    private static Random aleatorio = new Random();
+    private static void rellenarTablero(char personaje){
+        for (int i = 0; i < FILA; i++){
+            for(int j = 0; j > COLUMNA; j++){
+                tablero[i][j] = personaje;
             }
-            intento = intento - 1;
-        }while(intento > 0);
+        }
+    }
 
-        for (int i = 0; i < arrayPrimitiva.length; i++) {
-            System.out.print(arrayPrimitiva[i] + " ");
+    private static void asignarBart(char caracter){
+        int filaBart = aleatorio.nextInt(FILA);
+        int columnaBart = aleatorio.nextInt(COLUMNA);
+
+        tablero[filaBart][columnaBart] = caracter;
+    }
+
+    private static void asignarPersonajeALibre(char personaje, int numRepeticiones){
+        int filaPersonaje = 0;
+        int columnaPersonaje = 0;
+        for(int i = 0; i < numRepeticiones; i++){
+            do{
+                filaPersonaje = aleatorio.nextInt(FILA);
+                columnaPersonaje = aleatorio.nextInt(COLUMNA);
+            }while (tablero[filaPersonaje][columnaPersonaje] !='L');
+            tablero[filaPersonaje][columnaPersonaje] = personaje;
         }
 
-        System.out.println();
+    }
 
-        System.out.println("+-----------------+");
-        System.out.println("   End Primitiva  ");
-        System.out.println("+---------------- +");
+    public static void main(String[] args) {
+        tablero = new char[FILA][COLUMNA];
+
+        rellenarTablero('L');
+
+        asignarBart('B');
+
+        asignarPersonajeALibre('H', 10);
+
+        asignarPersonajeALibre('M', 10);
+
+
+
+
     }
 }

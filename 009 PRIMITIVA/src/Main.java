@@ -15,8 +15,10 @@ public class Main {
         }
 
         for (int i = 0; i < arrayPrimitiva.length; i++) {
-            System.out.println(arrayPrimitiva[i]);
+            System.out.print(arrayPrimitiva[i] + " ");
         }
+
+        System.out.println();
 
         do {
             System.out.println("Intentos: " + intento);
@@ -27,13 +29,14 @@ public class Main {
                     arrayPrimitiva[i] = "XX";
                 }
             }
-
-            for (int i = 0; i < arrayPrimitiva.length; i++) {
-                System.out.println(arrayPrimitiva[i]);
-            }
-
             intento = intento - 1;
         }while(intento > 0);
+
+        for (int i = 0; i < arrayPrimitiva.length; i++) {
+            System.out.print(arrayPrimitiva[i] + " ");
+        }
+
+        System.out.println();
 
         System.out.println("+-----------------+");
         System.out.println("   End Primitiva  ");

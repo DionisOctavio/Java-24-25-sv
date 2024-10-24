@@ -36,7 +36,7 @@ public class Examen {
     private static void rellenarTableroUsuarioLetras(){
         for (int i = 0; i < FILA_LETRAS; i++) {
             for (int j = 0; j < COLUMNA_LETRAS; j++) {
-                tableroUsuario[i][j] = String.valueOf('X');
+                tableroUsuario[i][j] = String.valueOf("XX");
             }
         }
     }

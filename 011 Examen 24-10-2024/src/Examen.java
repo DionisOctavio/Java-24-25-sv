@@ -70,7 +70,7 @@ public class Examen {
 
         // funcion de ingresar numeros
         do {
-            System.out.println("Ingrese el numero: ");
+            System.out.println("Ingrese el numero: Tienes " + intento + " Intentos");
             String numero = leer.nextLine();
             for (int i = 0; i < tablero.length; i++) {
                 for (int j = 0; j < tablero[i].length; j++) {

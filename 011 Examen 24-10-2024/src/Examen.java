@@ -12,8 +12,8 @@ public class Examen {
     private static final int COLUMNA_NUMEROS = 10;
 
     // Defino los anchos de la primerara tabla de los Letras
-    private static final char FILA_LETRAS = 10;
-    private static final char COLUMNA_LETRAS = 10;
+    private static final int FILA_LETRAS = 10;
+    private static final int COLUMNA_LETRAS = 10;
 
     // Inizializo las dos tablas
     private static String[][] tablero = new String[FILA_NUMEROS][COLUMNA_NUMEROS];

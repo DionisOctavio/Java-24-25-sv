@@ -8,7 +8,10 @@ public class Main {
         Scanner leer = new Scanner(System.in);
         int intento = 6;
 
-        String arrayPrimitiva[] = new String[6];
+
+
+        String arrayPrimitiva[] = new String[6]; //definindo un array de 6 celdad
+
         for (int i = 0; i < arrayPrimitiva.length; i++) {
             int numAle = ale.nextInt(100);
             arrayPrimitiva[i] = String.valueOf(numAle);
@@ -21,9 +24,9 @@ public class Main {
         do {
             System.out.println("Intentos: " + intento);
             System.out.println("Dame un Numerin");
-            String usuario = leer.next();
+            String respuesta = leer.next();
             for (int i = 0; i < arrayPrimitiva.length; i++) {
-                if (usuario.equals(arrayPrimitiva[i])) {
+                if (respuesta.equals(arrayPrimitiva[i])) {
                     arrayPrimitiva[i] = "XX";
                 }
             }

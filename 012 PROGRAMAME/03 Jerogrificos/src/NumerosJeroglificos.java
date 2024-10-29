@@ -16,6 +16,10 @@ public class NumerosJeroglificos {
 
             // Si el número es 0, terminar el programa
             if (numero == 0) break;
+            if (numero > 100000 || numero < 0) {
+                System.out.println("El numero es Invalido");
+                break;
+            }
 
             StringBuilder resultado = new StringBuilder();
 

@@ -16,26 +16,45 @@ public class NumerosJeroglificos {
 
             // Si el número es 0, terminar el programa
             if (numero == 0) break;
-            if (numero > 100000 || numero < 0) {
+            if (numero > 1000000 || numero < 0) {
                 System.out.println("El numero es Invalido");
                 break;
             }
 
-            StringBuilder resultado = new StringBuilder();
+            String resultado = "";  // Usamos una cadena en lugar de StringBuilder
 
-            // Descomponer el número en cada potencia de 10
+            // Descomponer el número en cada potencia de 10 usando switch
             for (int i = 0; i < valores.length; i++) {
-                int cantidad = numero / valores[i]; // Cuántas veces cabe esta potencia en el número
-                numero %= valores[i];               // Reducir el número al resto
+                int cantidad = numero / valores[i]; // coge el nnmero que le damos y lo divide en tre el numero que le coresponda del array valores
+                numero %= valores[i]; // esto calcula el resto despues de dividirlo en este caso si el numero es 120 y le aplicamos los primeroa 100 el resto seria 20 para la siguiente pasada
 
-                // Agregar el símbolo correspondiente la cantidad de veces necesaria
-                for (int j = 0; j < cantidad; j++) {
-                    resultado.append(simbolos[i]);
+                switch (i) {
+                    case 0: // 1,000,000
+                        for (int j = 0; j < cantidad; j++) resultado += 'H';
+                        break;
+                    case 1: // 100,000
+                        for (int j = 0; j < cantidad; j++) resultado += 'R';
+                        break;
+                    case 2: // 10,000
+                        for (int j = 0; j < cantidad; j++) resultado += 'D';
+                        break;
+                    case 3: // 1,000
+                        for (int j = 0; j < cantidad; j++) resultado += 'F'; //esto asigna las veces que tiene que poner el numero tras la division de arriba
+                        break;
+                    case 4: // 100
+                        for (int j = 0; j < cantidad; j++) resultado += 'C';
+                        break;
+                    case 5: // 10
+                        for (int j = 0; j < cantidad; j++) resultado += 'G';
+                        break;
+                    case 6: // 1
+                        for (int j = 0; j < cantidad; j++) resultado += 'T';
+                        break;
                 }
             }
 
             // Imprimir el resultado para este número
-            System.out.println(resultado.toString());
+            System.out.println(resultado);
         }
 
         scanner.close();

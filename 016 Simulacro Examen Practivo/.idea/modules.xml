@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/001 MatrizAleatoria/001 MatrizAleatoria.iml" filepath="$PROJECT_DIR$/001 MatrizAleatoria/001 MatrizAleatoria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/002 Revisa Ejercicio Jerogrificos/002 Revisa Ejercicio Jerogrificos.iml" filepath="$PROJECT_DIR$/002 Revisa Ejercicio Jerogrificos/002 Revisa Ejercicio Jerogrificos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/003 Memoriza/003 Memoriza.iml" filepath="$PROJECT_DIR$/003 Memoriza/003 Memoriza.iml" />
+      <module fileurl="file://$PROJECT_DIR$/004 Array/004 Array.iml" filepath="$PROJECT_DIR$/004 Array/004 Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/005 Conversiones/005 Conversiones.iml" filepath="$PROJECT_DIR$/005 Conversiones/005 Conversiones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/007 Optimizacion/007 Optimizacion.iml" filepath="$PROJECT_DIR$/007 Optimizacion/007 Optimizacion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/016 Simulacro Examen Practivo.iml" filepath="$PROJECT_DIR$/.idea/016 Simulacro Examen Practivo.iml" />
+    </modules>
+  </component>
+</project>

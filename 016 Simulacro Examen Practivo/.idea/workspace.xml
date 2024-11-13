@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3fc7302d-d8ca-4365-b528-7a1071feaed8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/001 MatrizAleatoria/001 MatrizAleatoria.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/002 Revisa Ejercicio Jerogrificos/002 Revisa Ejercicio Jerogrificos.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/003 Memoriza/003 Memoriza.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/004 Array/004 Array.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/005 Conversiones/005 Conversiones.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/007 Optimizacion/007 Optimizacion.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2okycrWxpKvj9r7zmLGVj4Yro9l" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Github/Java-24-25-sv/016 Simulacro Examen Practivo",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3fc7302d-d8ca-4365-b528-7a1071feaed8" name="Changes" comment="" />
+      <created>1731427950554</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731427950554</updated>
+      <workItem from="1731427951563" duration="4000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

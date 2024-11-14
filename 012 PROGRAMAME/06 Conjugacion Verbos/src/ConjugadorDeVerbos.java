@@ -7,16 +7,16 @@ public class ConjugadorDeVerbos {
         String[] pronombres = {"yo", "tú", "él/ella/usted", "nosotros/nosotras", "vosotros/vosotras", "ellos/ellas/ustedes"};
 
         while (true) {
-            String input = scanner.nextLine().trim();
-            if (input.endsWith(" T")) break;
+            String input = scanner.nextLine().trim(); // comer
+            if (input.endsWith(" T")) break; // comprueba si hay un a T si lo hay Finaliza
 
-            String[] parts = input.split(" ");
-            String verbo = parts[0];
-            char tiempo = parts[1].charAt(0);
-            String terminacion = verbo.substring(verbo.length() - 2);
-            String raiz = verbo.substring(0, verbo.length() - 2);
+            String[] parts = input.split(" "); // seciona el string "comer F" → "comer" + "F"
+            String verbo = parts[0]; // guardar "comer"
+            char tiempo = parts[1].charAt(0); // guardas el "F" el tiempo verbal
+            String terminacion = verbo.substring(verbo.length() - 2); // substring coge de la posicion 3 hasta el final de la cadena. "er" (el 3 es por que 5 - 2 = 3 osea le dices desde donde empezar)
+            String raiz = verbo.substring(0, verbo.length() - 2); // aqui haces lo mismo pero le dices que empiece a contar desde la posicion 0 y que acabe el la 3. "com"
 
-            String[] conjugaciones;
+            String[] conjugaciones; // defino el string conjugaciones en forma de array
 
             switch (tiempo) {
                 case 'A':
@@ -32,6 +32,7 @@ public class ConjugadorDeVerbos {
                     throw new IllegalArgumentException("Tiempo verbal no válido");
             }
 
+            // Funcion 
             for (int i = 0; i < pronombres.length; i++) {
                 System.out.println(pronombres[i] + " " + conjugaciones[i]);
             }

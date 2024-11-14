@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
-public class ConjugadorDeVerbos {
+public class Verbos {
+
+    private static String verbo = "";
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -11,7 +13,7 @@ public class ConjugadorDeVerbos {
             if (input.endsWith(" T")) break; // comprueba si hay un a T si lo hay Finaliza
 
             String[] parts = input.split(" "); // seciona el string "comer F" → "comer" + "F"
-            String verbo = parts[0]; // guardar "comer"
+            verbo = parts[0]; // guardar "comer"
             char tiempo = parts[1].charAt(0); // guardas el "F" el tiempo verbal
             String terminacion = verbo.substring(verbo.length() - 2); // substring coge de la posicion 3 hasta el final de la cadena. "er" (el 3 es por que 5 - 2 = 3 osea le dices desde donde empezar)
             String raiz = verbo.substring(0, verbo.length() - 2); // aqui haces lo mismo pero le dices que empiece a contar desde la posicion 0 y que acabe el la 3. "com"
@@ -32,7 +34,7 @@ public class ConjugadorDeVerbos {
                     throw new IllegalArgumentException("Tiempo verbal no válido");
             }
 
-            // Funcion 
+            // Funcion para imprimir el resultado de la conjugacion
             for (int i = 0; i < pronombres.length; i++) {
                 System.out.println(pronombres[i] + " " + conjugaciones[i]);
             }
@@ -62,6 +64,6 @@ public class ConjugadorDeVerbos {
     }
 
     private static String[] futuro(String terminacion, String raiz) {
-        return new String[]{raiz + "é", raiz + "ás", raiz + "á", raiz + "emos", raiz + "éis", raiz + "án"};
+        return new String[]{verbo + "é", verbo + "ás", verbo + "á", verbo + "emos", verbo + "éis", verbo + "án"};
     }
 }

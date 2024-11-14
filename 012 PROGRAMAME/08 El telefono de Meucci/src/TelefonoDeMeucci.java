@@ -35,9 +35,9 @@ public class TelefonoDeMeucci {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in); // defino un scaner llamado "leer"
 
-        while (leer.hasNextLine()) {
+        while (true) {
             String linea = leer.nextLine().trim();
-            if (linea.isEmpty()) continue;
+            if (linea.isEmpty()) break; // Salir si la línea está vacía
 
             int combinaciones = contarCombinaciones(linea);
             System.out.println(combinaciones);

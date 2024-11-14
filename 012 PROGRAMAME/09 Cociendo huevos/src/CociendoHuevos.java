@@ -13,8 +13,8 @@ public class CociendoHuevos {
 
             if (h == 0 && c == 0) break;
 
-            int tandas = (h + c - 1) / c; // Cálculo del número de tandas
-            int tiempoTotal = tandas * 10; // Tiempo total en minutos
+            int tandas = (h + c - 1) / c;
+            int tiempoTotal = tandas * 10;
 
             System.out.println("Tiempo total: " + tiempoTotal);
         }

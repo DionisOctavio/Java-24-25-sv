@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/000 HelloWorld/000 HelloWorld.iml" filepath="$PROJECT_DIR$/000 HelloWorld/000 HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/005 Challenge_arrays/001 Array_diez_num_aleatorios/001 Array_diez_num_aleatorios.iml" filepath="$PROJECT_DIR$/005 Challenge_arrays/001 Array_diez_num_aleatorios/001 Array_diez_num_aleatorios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/001 MatrizAleatoria/001 MatrizAleatoria.iml" filepath="$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/001 MatrizAleatoria/001 MatrizAleatoria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/001 Simpson/001 Simpson.iml" filepath="$PROJECT_DIR$/001 Simpson/001 Simpson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/005 Challenge_arrays/002 Matriz_diez_num_aleatorios/002 Matriz_diez_num_aleatorios.iml" filepath="$PROJECT_DIR$/005 Challenge_arrays/002 Matriz_diez_num_aleatorios/002 Matriz_diez_num_aleatorios.iml" />
+      <module fileurl="file://$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/002 Revisa Ejercicio Jerogrificos/002 Revisa Ejercicio Jerogrificos.iml" filepath="$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/002 Revisa Ejercicio Jerogrificos/002 Revisa Ejercicio Jerogrificos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/002 Video 1 - Simpson/002 Video 1 - Simpson.iml" filepath="$PROJECT_DIR$/002 Video 1 - Simpson/002 Video 1 - Simpson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/005 Challenge_arrays/003 Matriz_num_aleatorios_X_en_N/003 Matriz_num_aleatorios_X_en_N.iml" filepath="$PROJECT_DIR$/005 Challenge_arrays/003 Matriz_num_aleatorios_X_en_N/003 Matriz_num_aleatorios_X_en_N.iml" />
+      <module fileurl="file://$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/003 Memoriza/003 Memoriza.iml" filepath="$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/003 Memoriza/003 Memoriza.iml" />
+      <module fileurl="file://$PROJECT_DIR$/003 Video 2 - Simpson/003 Video 2 - Simpson.iml" filepath="$PROJECT_DIR$/003 Video 2 - Simpson/003 Video 2 - Simpson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/004 Array/004 Array.iml" filepath="$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/004 Array/004 Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/004 Video 3 - Simpson/004 Video 3 - Simpson.iml" filepath="$PROJECT_DIR$/004 Video 3 - Simpson/004 Video 3 - Simpson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/005 Conversiones/005 Conversiones.iml" filepath="$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/005 Conversiones/005 Conversiones.iml" />
+      <module fileurl="file://$PROJECT_DIR$/006 SimulacroExamen/006 SimulacroExamen.iml" filepath="$PROJECT_DIR$/006 SimulacroExamen/006 SimulacroExamen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/007 BINGO/007 BINGO.iml" filepath="$PROJECT_DIR$/007 BINGO/007 BINGO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/007 Optimizacion/007 Optimizacion.iml" filepath="$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/007 Optimizacion/007 Optimizacion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/008 Encontrar Maximo/008 Encontrar Maximo.iml" filepath="$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/008 Encontrar Maximo/008 Encontrar Maximo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/009 Ordena de Mayor a Menor/009 Ordena de Mayor a Menor.iml" filepath="$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/009 Ordena de Mayor a Menor/009 Ordena de Mayor a Menor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/009 PRIMITIVA/009 PRIMITIVA.iml" filepath="$PROJECT_DIR$/009 PRIMITIVA/009 PRIMITIVA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/012 PROGRAMAME/01 De las piramides a Cleopatra/01 De las piramides a Cleopatra.iml" filepath="$PROJECT_DIR$/012 PROGRAMAME/01 De las piramides a Cleopatra/01 De las piramides a Cleopatra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/008 Ejercicios/01 ORDENAR EN FUNCIONES EL SIGUIENTE CODIGO/01 ORDENAR EN FUNCIONES EL SIGUIENTE CODIGO.iml" filepath="$PROJECT_DIR$/008 Ejercicios/01 ORDENAR EN FUNCIONES EL SIGUIENTE CODIGO/01 ORDENAR EN FUNCIONES EL SIGUIENTE CODIGO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/010 Repaso Prueba 23-10-2024/01 Simpson/01 Simpson.iml" filepath="$PROJECT_DIR$/010 Repaso Prueba 23-10-2024/01 Simpson/01 Simpson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/010 Errores de Compilacion/010 Errores de Compilacion.iml" filepath="$PROJECT_DIR$/016 Simulacro Examen Teorico Practico/010 Errores de Compilacion/010 Errores de Compilacion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/011 Examen 24-10-2024/011 Examen 24-10-2024.iml" filepath="$PROJECT_DIR$/011 Examen 24-10-2024/011 Examen 24-10-2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/013 Memoriza/013 Memoriza.iml" filepath="$PROJECT_DIR$/013 Memoriza/013 Memoriza.iml" />
+      <module fileurl="file://$PROJECT_DIR$/014 Sopa de Letras/014 Sopa de Letras.iml" filepath="$PROJECT_DIR$/014 Sopa de Letras/014 Sopa de Letras.iml" />
+      <module fileurl="file://$PROJECT_DIR$/015 Simulacro de Examen Practico/015 Simulacro de Examen Practico.iml" filepath="$PROJECT_DIR$/015 Simulacro de Examen Practico/015 Simulacro de Examen Practico.iml" />
+      <module fileurl="file://$PROJECT_DIR$/017 Tablero doble Vader - Yoda - Funcionalidades/017 Tablero doble Vader - Yoda - Funcionalidades.iml" filepath="$PROJECT_DIR$/017 Tablero doble Vader - Yoda - Funcionalidades/017 Tablero doble Vader - Yoda - Funcionalidades.iml" />
+      <module fileurl="file://$PROJECT_DIR$/018 Tips Examen Java/018 Tips Examen Java.iml" filepath="$PROJECT_DIR$/018 Tips Examen Java/018 Tips Examen Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/019 Tips Examen StarWars/019 Tips Examen StarWars.iml" filepath="$PROJECT_DIR$/019 Tips Examen StarWars/019 Tips Examen StarWars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/010 Repaso Prueba 23-10-2024/02 BINGO/02 BINGO.iml" filepath="$PROJECT_DIR$/010 Repaso Prueba 23-10-2024/02 BINGO/02 BINGO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/012 PROGRAMAME/02 La altura de la piramide/02 La altura de la piramide.iml" filepath="$PROJECT_DIR$/012 PROGRAMAME/02 La altura de la piramide/02 La altura de la piramide.iml" />
+      <module fileurl="file://$PROJECT_DIR$/008 Ejercicios/02 OPTIMIZAR CODIGO/02 OPTIMIZAR CODIGO.iml" filepath="$PROJECT_DIR$/008 Ejercicios/02 OPTIMIZAR CODIGO/02 OPTIMIZAR CODIGO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/020 Tips Examen Ordenar Matriz/020 Tips Examen Ordenar Matriz.iml" filepath="$PROJECT_DIR$/020 Tips Examen Ordenar Matriz/020 Tips Examen Ordenar Matriz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/021 Repaso Examen/021 Repaso Examen.iml" filepath="$PROJECT_DIR$/021 Repaso Examen/021 Repaso Examen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/012 PROGRAMAME/03 Jerogrificos/03 Jerogrificos.iml" filepath="$PROJECT_DIR$/012 PROGRAMAME/03 Jerogrificos/03 Jerogrificos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/012 PROGRAMAME/05 Codigo de Barras/05 Codigo de Barras.iml" filepath="$PROJECT_DIR$/012 PROGRAMAME/05 Codigo de Barras/05 Codigo de Barras.iml" />
+      <module fileurl="file://$PROJECT_DIR$/012 PROGRAMAME/06 Conjugacion de Verbos/06 Conjugacion de Verbos.iml" filepath="$PROJECT_DIR$/012 PROGRAMAME/06 Conjugacion de Verbos/06 Conjugacion de Verbos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/012 PROGRAMAME/07 Desordenes Temporales/07 Desordenes Temporales.iml" filepath="$PROJECT_DIR$/012 PROGRAMAME/07 Desordenes Temporales/07 Desordenes Temporales.iml" />
+      <module fileurl="file://$PROJECT_DIR$/012 PROGRAMAME/08 El telefono de Meucci/08 El telefono de Meucci.iml" filepath="$PROJECT_DIR$/012 PROGRAMAME/08 El telefono de Meucci/08 El telefono de Meucci.iml" />
+      <module fileurl="file://$PROJECT_DIR$/012 PROGRAMAME/09 Cociendo huevos/09 Cociendo huevos.iml" filepath="$PROJECT_DIR$/012 PROGRAMAME/09 Cociendo huevos/09 Cociendo huevos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java-24-25-sv.iml" filepath="$PROJECT_DIR$/.idea/Java-24-25-sv.iml" />
+    </modules>
+  </component>
+</project>

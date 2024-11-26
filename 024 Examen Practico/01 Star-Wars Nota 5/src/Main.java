@@ -131,11 +131,17 @@ public class Main {
         rellenarTab1();
         asignarPersonajeTab1();
         asignarObjetosTab1(DARTH_MAUL, 5);
+        asignarObjetosTab1(MURO, 5);
+        tab1[9][9] = FINAL;
         imprimirTab1();
+
         System.out.println();
+
         rellenarTab2();
         asignarPersonajeTab2();
         asignarObjetosTab2(R2D2, 5);
+        asignarObjetosTab2(MURO, 5);
+        tab2[9][9] = FINAL;
         imprimirTab2();
 
         int movimientos[][] = new int[8][2];
@@ -174,7 +180,11 @@ public class Main {
 
         char[] letras = {'W', 'A', 'S', 'D', 'Q', 'E', 'R', 'T'};
 
-        while (vidasTablero1 >= 0 || vidasTablero2 >= 0){
+        boolean isFinalizado = true;
+
+        int contador = 0;
+
+        while (isFinalizado && (vidasTablero1 >= 0 || vidasTablero2 >= 0)){
 
             System.out.println("Dime el movimiento:");
             char direccion = leer.next().charAt(0);  //S
@@ -190,33 +200,119 @@ public class Main {
                 }
             }
 
-            // Calcular nueva fila
-            int filaCheck = filaYoda + (movimientos[coordenada][0] * casillas);  // cogemos y buscamos el valor corespondiente a la celda [2][0] en este caso = 1 y multiplicamos el mov
-            if (filaCheck < 0) {
-                filaCheck = FILA + filaCheck; // Envolver hacia abajo
-            } else if (filaCheck >= FILA) {
-                filaCheck = filaCheck - FILA; // Envolver hacia arriba
+
+            if (contador % 2 == 0){
+
+                // Calcular nueva fila
+                int filaCheck = filaYoda + (movimientos[coordenada][0] * casillas);  // cogemos y buscamos el valor corespondiente a la celda [2][0] en este caso = 1 y multiplicamos el mov
+                if (filaCheck < 0) {
+                    filaCheck = FILA + filaCheck; // Envolver hacia abajo
+                } else if (filaCheck >= FILA) {
+                    filaCheck = filaCheck - FILA; // Envolver hacia arriba
+                }
+
+                // Calcular nueva columna
+                int columnaCheck = columnaYoda + (movimientos[coordenada][1] * casillas);
+                if (columnaCheck < 0) {
+                    columnaCheck = COLUMNA + columnaCheck; // Envolver hacia la derecha
+                } else if (columnaCheck >= COLUMNA) {
+                    columnaCheck = columnaCheck - COLUMNA; // Envolver hacia la izquierda
+                }
+
+                switch (tab1[filaCheck][columnaCheck]){
+                    case LIBRE:
+                        // Actualizar tablero
+                        tab1[filaYoda][columnaYoda] = 'L';
+                        tab1[filaCheck][columnaCheck] = 'Y';
+
+                        // Actualizar posición del personaje
+                        filaYoda = filaCheck;
+                        columnaYoda = columnaCheck;
+                        break;
+                    case DARTH_MAUL:
+                        // Actualizar tablero
+                        tab1[filaYoda][columnaYoda] = 'L';
+                        tab1[filaCheck][columnaCheck] = 'Y';
+
+                        // Actualizar posición del personaje
+                        filaYoda = filaCheck;
+                        columnaYoda = columnaCheck;
+
+                        vidasTablero1--;
+
+                    case MURO:
+                        System.out.println("No puedes Desplazarte a la posicion " + filaCheck + columnaCheck + " Hay un Muro");
+                        break;
+                    case FINAL:
+                        tab1[filaYoda][columnaYoda] = 'L';
+                        tab1[filaCheck][columnaCheck] = 'W';
+
+                        filaYoda = filaCheck;
+                        columnaYoda = columnaCheck;
+
+                        System.out.println("HAS GANADO");
+                        vidasTablero1 = -10;
+                        isFinalizado = false;
+                        break;
+                }
+                imprimirTab1();
+            }else {
+
+                // Calcular nueva fila
+                int filaCheck = filaVader + (movimientos[coordenada][0] * casillas);  // cogemos y buscamos el valor corespondiente a la celda [2][0] en este caso = 1 y multiplicamos el mov
+                if (filaCheck < 0) {
+                    filaCheck = FILA + filaCheck; // Envolver hacia abajo
+                } else if (filaCheck >= FILA) {
+                    filaCheck = filaCheck - FILA; // Envolver hacia arriba
+                }
+
+                // Calcular nueva columna
+                int columnaCheck = columnaVader + (movimientos[coordenada][1] * casillas);
+                if (columnaCheck < 0) {
+                    columnaCheck = COLUMNA + columnaCheck; // Envolver hacia la derecha
+                } else if (columnaCheck >= COLUMNA) {
+                    columnaCheck = columnaCheck - COLUMNA; // Envolver hacia la izquierda
+                }
+
+                switch (tab2[filaCheck][columnaCheck]){
+                    case LIBRE:
+                        // Actualizar tablero
+                        tab2[filaVader][columnaVader] = 'L';
+                        tab2[filaCheck][columnaCheck] = 'V';
+
+                        // Actualizar posición del personaje
+                        filaVader = filaCheck;
+                        columnaVader = columnaCheck;
+                        break;
+                    case DARTH_MAUL:
+                        // Actualizar tablero
+                        tab2[filaVader][columnaVader] = 'L';
+                        tab2[filaCheck][columnaCheck] = 'V';
+
+                        // Actualizar posición del personaje
+                        filaVader = filaCheck;
+                        columnaVader = columnaCheck;
+
+                        vidasTablero2--;
+
+                    case MURO:
+                        System.out.println("No puedes Desplazarte a la posicion " + filaCheck + columnaCheck + " Hay un Muro");
+                        break;
+                    case FINAL:
+                        tab2[filaVader][columnaVader] = 'L';
+                        tab2[filaCheck][columnaCheck] = 'W';
+
+                        filaVader = filaCheck;
+                        columnaVader = columnaCheck;
+
+                        System.out.println("HAS GANADO");
+                        vidasTablero2 = -10;
+                        isFinalizado = false;
+                        break;
+                }
+                imprimirTab2();
             }
-
-            // Calcular nueva columna
-            int colCheck = columnaYoda + (movimientos[coordenada][1] * casillas);
-            if (colCheck < 0) {
-                colCheck = COLUMNA + colCheck; // Envolver hacia la derecha
-            } else if (colCheck >= COLUMNA) {
-                colCheck = colCheck - COLUMNA; // Envolver hacia la izquierda
-            }
-
-            // Actualizar tablero
-            tab1[filaYoda][columnaYoda] = 'L'; // Dejar casilla anterior como libre
-            tab1[filaCheck][colCheck] = 'Y';   // Nueva posición de Yoda
-
-            // Actualizar posición del personaje
-            filaYoda = filaCheck;
-            columnaYoda = colCheck;
-
-            // Mostrar el tablero actualizado
-            imprimirTab1();
-
+            contador++;
         }
     }
 }

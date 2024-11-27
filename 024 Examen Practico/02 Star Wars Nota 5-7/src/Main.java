@@ -17,6 +17,8 @@ public class Main {
 
     private static char[][] tab2= new char[FILA][COLUMNA];
 
+    private static char[][] tabAux= new char[FILA][COLUMNA];
+
     private static int vidasTablero1 = 3;
     private static int vidasTablero2 = 3;
 
@@ -131,6 +133,46 @@ public class Main {
         }
     }
 
+    private static void moverEnemogosCasillaAleatoria(char enemigo) {
+
+        int numEnemigos = 0;
+
+        // CLONAMOS EL TAB1 al TABAUX
+        for (int i = 0; i < FILA; i++){
+            for (int j = 0; j < COLUMNA; j++){
+                tabAux[i][j] = tab1[i][j];
+                if (tabAux[i][j] == enemigo){
+                    numEnemigos++;
+                }
+            }
+        }
+
+        // Eliminamos los enemigos de tab1
+        for (int i = 0; i < FILA; i++){
+            for (int j = 0; j < COLUMNA; j++){
+                if (tab1[i][j] == enemigo){
+                    tab1[i][j] = LIBRE;
+                }
+            }
+        }
+
+        for (int i = 0; i < numEnemigos; i++){
+
+            int filaAleatorio = 0;
+            int columnaAleatorio = 0;
+
+            do {
+
+                filaAleatorio = random.nextInt(FILA);
+                columnaAleatorio = random.nextInt(COLUMNA);
+
+            }while (tabAux[filaAleatorio][columnaAleatorio] != LIBRE);
+            tab1[filaAleatorio][columnaAleatorio] = enemigo;
+        }
+
+
+    }
+
     public static void main(String[] args) {
 
         rellenarTab1();
@@ -184,7 +226,7 @@ public class Main {
         boolean isFinalizado = false;
         int contador = 0;
 
-        while (isFinalizado = true && (vidasTablero1 >= 0 || vidasTablero2 >= 0)){
+        while (vidasTablero1 > 0 && vidasTablero2 > 0){
 
             System.out.println("#####################################################");
             System.out.println("VIDAS - TAB 1 : " + vidasTablero1);
@@ -199,6 +241,7 @@ public class Main {
             }else {
                 System.out.println("############  Tablero 2  ############");
             }
+
             System.out.println("######  Ingresa el Movimiento  ######");
             String desplazamiento = leer.nextLine();
 
@@ -255,11 +298,14 @@ public class Main {
                         columnaYoda = columnaCheck;
 
                         vidasTablero1--;
+                        System.out.println("====================");
+                        System.out.println("HAS PERDIDO UNA VIDA");
+                        System.out.println("====================");
                         break;
                     case MURO:
-                        System.out.println("#######################");
+                        System.out.println("=======================");
                         System.out.println("AQUI HA UN MURO TONTICO");
-                        System.out.println("#######################");
+                        System.out.println("=======================");
                         break;
                     case FINAL:
                         tab1[filaYoda][columnaYoda] = LIBRE;
@@ -272,6 +318,7 @@ public class Main {
                         isFinalizado = true;
                         break;
                 }
+                moverEnemogosCasillaAleatoria(DARTH_MAUL);
             }else {
 
                 int filaCheck = filaVader + (movimientos[cordenada][0] * pasos);
@@ -297,7 +344,7 @@ public class Main {
                         columnaVader = columnaCheck;
 
                         break;
-                    case DARTH_MAUL:
+                    case R2D2:
                         tab2[filaVader][columnaVader] = LIBRE;
                         tab2[filaCheck][columnaCheck] = DARTH_VADER;
 
@@ -305,11 +352,14 @@ public class Main {
                         columnaVader = columnaCheck;
 
                         vidasTablero2--;
+                        System.out.println("====================");
+                        System.out.println("HAS PERDIDO UNA VIDA");
+                        System.out.println("====================");
                         break;
                     case MURO:
-                        System.out.println("#######################");
+                        System.out.println("=======================");
                         System.out.println("AQUI HA UN MURO TONTICO");
-                        System.out.println("#######################");
+                        System.out.println("=======================");
                         break;
                     case FINAL:
                         tab2[filaVader][columnaVader] = LIBRE;
@@ -322,9 +372,7 @@ public class Main {
                         isFinalizado = true;
                         break;
                 }
-            }
-            if (vidasTablero1 < 0 || vidasTablero2 < 0){
-                isFinalizado = true;
+                moverEnemogosCasillaAleatoria(R2D2);
             }
             contador++;
         }

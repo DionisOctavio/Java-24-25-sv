@@ -284,7 +284,7 @@ public class Main {
                         filaVader = filaCheck;
                         columnaVader = columnaCheck;
                         break;
-                    case DARTH_MAUL:
+                    case R2D2:
                         // Actualizar tablero
                         tab2[filaVader][columnaVader] = 'L';
                         tab2[filaCheck][columnaCheck] = 'V';

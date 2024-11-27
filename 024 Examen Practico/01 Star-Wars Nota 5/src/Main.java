@@ -312,6 +312,9 @@ public class Main {
                 }
                 imprimirTab2();
             }
+            if (vidasTablero1 >= 0 || vidasTablero2 >= 0){
+                isFinalizado = false;
+            }
             contador++;
         }
     }

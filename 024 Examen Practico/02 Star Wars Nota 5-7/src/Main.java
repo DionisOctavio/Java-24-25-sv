@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Vector;
 
 public class Main {
 
@@ -19,7 +20,11 @@ public class Main {
     private static int vidasTablero1 = 3;
     private static int vidasTablero2 = 3;
 
-    //CONSTANTES
+    // MATRIZ DE MOVIMIENTOS
+    private static int[][] movimientos = new int[8][2];
+    private static char[] letras ={'W','S','A','D','Q','E','Z','X'};
+
+    // CONSTANTES
     // PERSONAJES TAB 1
     private static final char YODA = 'Y';
     private static final char DARTH_MAUL = 'D';
@@ -133,7 +138,6 @@ public class Main {
         asignarObjetosTab1(DARTH_MAUL, 5);
         asignarObjetosTab1(MURO, 5);
         tab1[9][9] = FINAL;
-        imprimirTab1();
 
         System.out.println();
 
@@ -142,7 +146,183 @@ public class Main {
         asignarObjetosTab2(R2D2, 5);
         asignarObjetosTab2(MURO, 5);
         tab2[9][9] = FINAL;
-        imprimirTab2();
+
+        // DEFINO LOS MIVIMIENT QUE VO A TENER EN MI MATRIZ
+
+        // W --- Arriba
+        movimientos[0][0] = -1;
+        movimientos[0][1] = 0;
+
+        // S --- Abajo
+        movimientos[1][0] = 1;
+        movimientos[1][1] = 0;
+
+        // A --- Izquierda
+        movimientos[2][0] = 0;
+        movimientos[2][1] = -1;
+
+        // D --- Derecha
+        movimientos[3][0] = 0;
+        movimientos[3][1] = 1;
+
+        // Q --- Arriba-Izquierda
+        movimientos[4][0] = -1;
+        movimientos[4][1] = -1;
+
+        // E --- Arriba-Derecha
+        movimientos[5][0] = -1;
+        movimientos[5][1] = 1;
+
+        // Z --- Abajo-Izquierda
+        movimientos[6][0] = 1;
+        movimientos[6][1] = -1;
+
+        // X --- Abajo-Derecha
+        movimientos[7][0] = 1;
+        movimientos[7][1] = 1;
+
+        boolean isFinalizado = false;
+        int contador = 0;
+
+        while (isFinalizado = true && (vidasTablero1 >= 0 || vidasTablero2 >= 0)){
+
+            System.out.println("#####################################################");
+            System.out.println("VIDAS - TAB 1 : " + vidasTablero1);
+            imprimirTab1();
+            System.out.println("#####################################################");
+            System.out.println("VIDAS - TAB 2 : " + vidasTablero2);
+            imprimirTab2();
+            System.out.println("#####################################################");
+
+            System.out.println("######  Ingresa el Movimiento  ######");
+            String desplazamiento = leer.nextLine();
+
+            char direccion = 0;
+            int pasos = 0;
+
+            if (desplazamiento.length() < 2) {
+                System.out.println("TONTICO QUE TE FALTA ALGO");
+            }else {
+                direccion = desplazamiento.charAt(0);
+                String pasosStr = desplazamiento.substring(1);
+                pasos = Integer.parseInt(pasosStr);
+            }
+
+            int cordenada = 0;
+
+            for (int i = 0; i < letras.length; i++) {
+                if (letras[i] == direccion) {
+                    cordenada = i;
+                    break;
+                }
+            }
+
+            if (contador % 2 == 0){
+
+                int filaCheck = filaYoda + (movimientos[cordenada][0]*pasos);
+                if (filaCheck < 0) {
+                    filaCheck = FILA + filaCheck; // Envolver hacia abajo
+                } else if (filaCheck >= FILA) {
+                    filaCheck = filaCheck - FILA; // Envolver hacia arriba
+                }
+
+                int columnaCheck = columnaYoda + (movimientos[cordenada][1]*pasos);
+                if (columnaCheck < 0){
+                    columnaCheck = COLUMNA + columnaCheck;
+                }else if (columnaCheck >= COLUMNA){
+                    columnaCheck = columnaCheck - COLUMNA;
+                }
+
+                switch (tab1[filaCheck][columnaCheck]){
+                    case LIBRE:
+                        tab1[filaYoda][columnaYoda] = LIBRE;
+                        tab1[filaCheck][columnaCheck] = YODA;
+
+                        filaYoda = filaCheck;
+                        columnaYoda = columnaCheck;
+
+                        break;
+                    case DARTH_MAUL:
+                        tab1[filaYoda][columnaYoda] = LIBRE;
+                        tab1[filaCheck][columnaCheck] = YODA;
+
+                        filaYoda = filaCheck;
+                        columnaYoda = columnaCheck;
+
+                        vidasTablero1--;
+                        break;
+                    case MURO:
+                        System.out.println("#######################");
+                        System.out.println("AQUI HA UN MURO TONTICO");
+                        System.out.println("#######################");
+                        break;
+                    case FINAL:
+                        tab1[filaYoda][columnaYoda] = LIBRE;
+                        tab1[filaCheck][columnaCheck] = YODA;
+
+                        filaYoda = filaCheck;
+                        columnaYoda = columnaCheck;
+
+                        vidasTablero1 = - 10000000;
+                        isFinalizado = true;
+                        break;
+                }
+            }else {
+
+                int filaCheck = filaVader + (movimientos[cordenada][0] * pasos);
+                if (filaCheck < 0) {
+                    filaCheck = FILA + filaCheck; // Envolver hacia abajo
+                } else if (filaCheck >= FILA) {
+                    filaCheck = filaCheck - FILA; // Envolver hacia arriba
+                }
+
+                int columnaCheck = columnaVader + (movimientos[cordenada][1] * pasos);
+                if (columnaCheck < 0) {
+                    columnaCheck = COLUMNA + columnaCheck;
+                } else if (columnaCheck >= COLUMNA) {
+                    columnaCheck = columnaCheck - COLUMNA;
+                }
+
+                switch (tab2[filaCheck][columnaCheck]) {
+                    case LIBRE:
+                        tab2[filaVader][columnaVader] = LIBRE;
+                        tab2[filaCheck][columnaCheck] = DARTH_VADER;
+
+                        filaVader = filaCheck;
+                        columnaVader = columnaCheck;
+
+                        break;
+                    case DARTH_MAUL:
+                        tab2[filaVader][columnaVader] = LIBRE;
+                        tab2[filaCheck][columnaCheck] = DARTH_VADER;
+
+                        filaVader = filaCheck;
+                        columnaVader = columnaCheck;
+
+                        vidasTablero2--;
+                        break;
+                    case MURO:
+                        System.out.println("#######################");
+                        System.out.println("AQUI HA UN MURO TONTICO");
+                        System.out.println("#######################");
+                        break;
+                    case FINAL:
+                        tab2[filaVader][columnaVader] = LIBRE;
+                        tab2[filaCheck][columnaCheck] = DARTH_VADER;
+
+                        filaVader = filaCheck;
+                        columnaVader = columnaCheck;
+
+                        vidasTablero2 = -10000000;
+                        isFinalizado = true;
+                        break;
+                }
+            }
+            if (vidasTablero1 < 0 || vidasTablero2 < 0){
+                isFinalizado = true;
+            }
+            contador++;
+        }
 
     }
 }

@@ -194,6 +194,11 @@ public class Main {
             imprimirTab2();
             System.out.println("#####################################################");
 
+            if (contador % 2 == 0){
+                System.out.println("############  Tablero 1  ############");
+            }else {
+                System.out.println("############  Tablero 2  ############");
+            }
             System.out.println("######  Ingresa el Movimiento  ######");
             String desplazamiento = leer.nextLine();
 

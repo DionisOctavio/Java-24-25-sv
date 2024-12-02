@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Vector;
 
 public class Main {
 
@@ -16,10 +17,16 @@ public class Main {
 
     private static char[][] tab2= new char[FILA][COLUMNA];
 
+    private static char[][] tabAux= new char[FILA][COLUMNA];
+
     private static int vidasTablero1 = 3;
     private static int vidasTablero2 = 3;
 
-    //CONSTANTES
+    // MATRIZ DE MOVIMIENTOS
+    private static int[][] movimientos = new int[8][2];
+    private static char[] letras ={'W','S','A','D','Q','E','Z','X'};
+
+    // CONSTANTES
     // PERSONAJES TAB 1
     private static final char YODA = 'Y';
     private static final char DARTH_MAUL = 'D';
@@ -126,6 +133,46 @@ public class Main {
         }
     }
 
+    private static void moverEnemogosCasillaAleatoria(char enemigo) {
+
+        int numEnemigos = 0;
+
+        // CLONAMOS EL TAB1 al TABAUX
+        for (int i = 0; i < FILA; i++){
+            for (int j = 0; j < COLUMNA; j++){
+                tabAux[i][j] = tab1[i][j];
+                if (tabAux[i][j] == enemigo){
+                    numEnemigos++;
+                }
+            }
+        }
+
+        // Eliminamos los enemigos de tab1
+        for (int i = 0; i < FILA; i++){
+            for (int j = 0; j < COLUMNA; j++){
+                if (tab1[i][j] == enemigo){
+                    tab1[i][j] = LIBRE;
+                }
+            }
+        }
+
+        for (int i = 0; i < numEnemigos; i++){
+
+            int filaAleatorio = 0;
+            int columnaAleatorio = 0;
+
+            do {
+
+                filaAleatorio = random.nextInt(FILA);
+                columnaAleatorio = random.nextInt(COLUMNA);
+
+            }while (tabAux[filaAleatorio][columnaAleatorio] != LIBRE);
+            tab1[filaAleatorio][columnaAleatorio] = enemigo;
+        }
+
+
+    }
+
     public static void main(String[] args) {
 
         rellenarTab1();
@@ -133,7 +180,6 @@ public class Main {
         asignarObjetosTab1(DARTH_MAUL, 5);
         asignarObjetosTab1(MURO, 5);
         tab1[9][9] = FINAL;
-        imprimirTab1();
 
         System.out.println();
 
@@ -142,195 +188,194 @@ public class Main {
         asignarObjetosTab2(R2D2, 5);
         asignarObjetosTab2(MURO, 5);
         tab2[9][9] = FINAL;
-        imprimirTab2();
 
-        int movimientos[][] = new int[8][2];
+        // DEFINO LOS MIVIMIENT QUE VO A TENER EN MI MATRIZ
 
-        // W: Arriba
+        // W --- Arriba
         movimientos[0][0] = -1;
         movimientos[0][1] = 0;
 
-        // A: Izquierda
-        movimientos[1][0] = 0;
-        movimientos[1][1] = -1;
+        // S --- Abajo
+        movimientos[1][0] = 1;
+        movimientos[1][1] = 0;
 
-        // S: Abajo
-        movimientos[2][0] = 1;
-        movimientos[2][1] = 0;
+        // A --- Izquierda
+        movimientos[2][0] = 0;
+        movimientos[2][1] = -1;
 
-        // D: Derecha
+        // D --- Derecha
         movimientos[3][0] = 0;
         movimientos[3][1] = 1;
 
-        // Q: Diagonal arriba-izquierda
+        // Q --- Arriba-Izquierda
         movimientos[4][0] = -1;
         movimientos[4][1] = -1;
 
-        // E: Diagonal arriba-derecha
+        // E --- Arriba-Derecha
         movimientos[5][0] = -1;
         movimientos[5][1] = 1;
 
-        // R: Diagonal abajo-izquierda
+        // Z --- Abajo-Izquierda
         movimientos[6][0] = 1;
         movimientos[6][1] = -1;
 
-        // T: Diagonal abajo-derecha
+        // X --- Abajo-Derecha
         movimientos[7][0] = 1;
         movimientos[7][1] = 1;
 
-        char[] letras = {'W', 'A', 'S', 'D', 'Q', 'E', 'R', 'T'};
-
-        boolean isFinalizado = true;
-
+        boolean isFinalizado = false;
         int contador = 0;
 
-        while (isFinalizado && (vidasTablero1 >= 0 || vidasTablero2 >= 0)){
+        while (vidasTablero1 > 0 && vidasTablero2 > 0){
 
-            System.out.println("Dime el movimiento:");
-            char direccion = leer.next().charAt(0);  //S
+            System.out.println("#####################################################");
+            System.out.println("VIDAS - TAB 1 : " + vidasTablero1);
+            imprimirTab1();
+            System.out.println("#####################################################");
+            System.out.println("VIDAS - TAB 2 : " + vidasTablero2);
+            imprimirTab2();
+            System.out.println("#####################################################");
 
-            System.out.println("Dime el número de casillas:");
-            int casillas = leer.nextInt();  //6
+            if (contador % 2 == 0){
+                System.out.println("############  Tablero 1  ############");
+            }else {
+                System.out.println("############  Tablero 2  ############");
+            }
 
-            int coordenada = -1;
-            for (int i = 0; i < letras.length; i++) {  //S esta en la celda 2 del array por lo que cordenada sera 2
+            System.out.println("######  Ingresa el Movimiento  ######");
+            String desplazamiento = leer.nextLine();
+
+            char direccion = 0;
+            int pasos = 0;
+
+            if (desplazamiento.length() < 2) {
+                System.out.println("TONTICO QUE TE FALTA ALGO");
+            }else {
+                direccion = desplazamiento.charAt(0);
+                String pasosStr = desplazamiento.substring(1);
+                pasos = Integer.parseInt(pasosStr);
+            }
+
+            int cordenada = 0;
+
+            for (int i = 0; i < letras.length; i++) {
                 if (letras[i] == direccion) {
-                    coordenada = i;
+                    cordenada = i;
                     break;
                 }
             }
 
-
             if (contador % 2 == 0){
 
-                // Calcular nueva fila
-                int filaCheck = filaYoda + (movimientos[coordenada][0] * casillas);  // cogemos y buscamos el valor corespondiente a la celda [2][0] en este caso = 1 y multiplicamos el mov
+                int filaCheck = filaYoda + (movimientos[cordenada][0]*pasos);
                 if (filaCheck < 0) {
                     filaCheck = FILA + filaCheck; // Envolver hacia abajo
                 } else if (filaCheck >= FILA) {
                     filaCheck = filaCheck - FILA; // Envolver hacia arriba
                 }
 
-                // Calcular nueva columna
-                int columnaCheck = columnaYoda + (movimientos[coordenada][1] * casillas);
-                if (columnaCheck < 0) {
-                    columnaCheck = COLUMNA + columnaCheck; // Envolver hacia la derecha
-                } else if (columnaCheck >= COLUMNA) {
-                    columnaCheck = columnaCheck - COLUMNA; // Envolver hacia la izquierda
+                int columnaCheck = columnaYoda + (movimientos[cordenada][1]*pasos);
+                if (columnaCheck < 0){
+                    columnaCheck = COLUMNA + columnaCheck;
+                }else if (columnaCheck >= COLUMNA){
+                    columnaCheck = columnaCheck - COLUMNA;
                 }
 
                 switch (tab1[filaCheck][columnaCheck]){
                     case LIBRE:
-                        // Actualizar tablero
-                        tab1[filaYoda][columnaYoda] = 'L';
-                        tab1[filaCheck][columnaCheck] = 'Y';
+                        tab1[filaYoda][columnaYoda] = LIBRE;
+                        tab1[filaCheck][columnaCheck] = YODA;
 
-                        // Actualizar posición del personaje
                         filaYoda = filaCheck;
                         columnaYoda = columnaCheck;
+
                         break;
                     case DARTH_MAUL:
-                        // Actualizar tablero
-                        tab1[filaYoda][columnaYoda] = 'L';
-                        tab1[filaCheck][columnaCheck] = 'Y';
+                        tab1[filaYoda][columnaYoda] = LIBRE;
+                        tab1[filaCheck][columnaCheck] = YODA;
 
-                        // Actualizar posición del personaje
                         filaYoda = filaCheck;
                         columnaYoda = columnaCheck;
 
                         vidasTablero1--;
-
+                        System.out.println("====================");
+                        System.out.println("HAS PERDIDO UNA VIDA");
+                        System.out.println("====================");
+                        break;
                     case MURO:
-                        System.out.println("No puedes Desplazarte a la posicion " + filaCheck + columnaCheck + " Hay un Muro");
+                        System.out.println("=======================");
+                        System.out.println("AQUI HA UN MURO TONTICO");
+                        System.out.println("=======================");
                         break;
                     case FINAL:
-                        tab1[filaYoda][columnaYoda] = 'L';
-                        tab1[filaCheck][columnaCheck] = 'W';
+                        tab1[filaYoda][columnaYoda] = LIBRE;
+                        tab1[filaCheck][columnaCheck] = YODA;
 
                         filaYoda = filaCheck;
                         columnaYoda = columnaCheck;
 
-                        System.out.println("HAS GANADO");
-                        vidasTablero1 = -10;
-                        isFinalizado = false;
+                        vidasTablero1 = - 10000000;
+                        isFinalizado = true;
                         break;
                 }
-                System.out.println("#===========#");
-                System.out.println("Tab 1");
-                imprimirTab1();
-                System.out.println("#===========#");
-                System.out.println("Tab 2");
-                imprimirTab2();
-                System.out.println("#===========#");
+                moverEnemogosCasillaAleatoria(DARTH_MAUL);
             }else {
 
-                // Calcular nueva fila
-                int filaCheck = filaVader + (movimientos[coordenada][0] * casillas);  // cogemos y buscamos el valor corespondiente a la celda [2][0] en este caso = 1 y multiplicamos el mov
+                int filaCheck = filaVader + (movimientos[cordenada][0] * pasos);
                 if (filaCheck < 0) {
                     filaCheck = FILA + filaCheck; // Envolver hacia abajo
                 } else if (filaCheck >= FILA) {
                     filaCheck = filaCheck - FILA; // Envolver hacia arriba
                 }
 
-                // Calcular nueva columna
-                int columnaCheck = columnaVader + (movimientos[coordenada][1] * casillas);
+                int columnaCheck = columnaVader + (movimientos[cordenada][1] * pasos);
                 if (columnaCheck < 0) {
-                    columnaCheck = COLUMNA + columnaCheck; // Envolver hacia la derecha
+                    columnaCheck = COLUMNA + columnaCheck;
                 } else if (columnaCheck >= COLUMNA) {
-                    columnaCheck = columnaCheck - COLUMNA; // Envolver hacia la izquierda
+                    columnaCheck = columnaCheck - COLUMNA;
                 }
 
-                switch (tab2[filaCheck][columnaCheck]){
+                switch (tab2[filaCheck][columnaCheck]) {
                     case LIBRE:
-                        // Actualizar tablero
-                        tab2[filaVader][columnaVader] = 'L';
-                        tab2[filaCheck][columnaCheck] = 'V';
+                        tab2[filaVader][columnaVader] = LIBRE;
+                        tab2[filaCheck][columnaCheck] = DARTH_VADER;
 
-                        // Actualizar posición del personaje
                         filaVader = filaCheck;
                         columnaVader = columnaCheck;
+
                         break;
                     case R2D2:
-                        // Actualizar tablero
-                        tab2[filaVader][columnaVader] = 'L';
-                        tab2[filaCheck][columnaCheck] = 'V';
+                        tab2[filaVader][columnaVader] = LIBRE;
+                        tab2[filaCheck][columnaCheck] = DARTH_VADER;
 
-                        // Actualizar posición del personaje
                         filaVader = filaCheck;
                         columnaVader = columnaCheck;
 
                         vidasTablero2--;
-
+                        System.out.println("====================");
+                        System.out.println("HAS PERDIDO UNA VIDA");
+                        System.out.println("====================");
+                        break;
                     case MURO:
-                        System.out.println("No puedes Desplazarte a la posicion " + filaCheck + columnaCheck + " Hay un Muro");
+                        System.out.println("=======================");
+                        System.out.println("AQUI HA UN MURO TONTICO");
+                        System.out.println("=======================");
                         break;
                     case FINAL:
-                        tab2[filaVader][columnaVader] = 'L';
-                        tab2[filaCheck][columnaCheck] = 'W';
+                        tab2[filaVader][columnaVader] = LIBRE;
+                        tab2[filaCheck][columnaCheck] = DARTH_VADER;
 
                         filaVader = filaCheck;
                         columnaVader = columnaCheck;
 
-                        System.out.println("HAS GANADO");
-                        vidasTablero2 = -10;
-                        isFinalizado = false;
+                        vidasTablero2 = -10000000;
+                        isFinalizado = true;
                         break;
                 }
-                System.out.println("#===========#");
-                System.out.println("Tab 1");
-                imprimirTab1();
-                System.out.println("#===========#");
-                System.out.println("Tab 2");
-                imprimirTab2();
-                System.out.println("#===========#");
-            }
-            if (vidasTablero1 <= 0 || vidasTablero2 <= 0){
-                isFinalizado = false;
-            }
-            if (vidasTablero1 >= 0 || vidasTablero2 >= 0){
-                isFinalizado = false;
+                moverEnemogosCasillaAleatoria(R2D2);
             }
             contador++;
         }
+
     }
 }

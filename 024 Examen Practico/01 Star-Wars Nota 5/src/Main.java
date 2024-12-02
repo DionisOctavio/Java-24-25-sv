@@ -255,7 +255,13 @@ public class Main {
                         isFinalizado = false;
                         break;
                 }
+                System.out.println("#===========#");
+                System.out.println("Tab 1");
                 imprimirTab1();
+                System.out.println("#===========#");
+                System.out.println("Tab 2");
+                imprimirTab2();
+                System.out.println("#===========#");
             }else {
 
                 // Calcular nueva fila
@@ -310,7 +316,16 @@ public class Main {
                         isFinalizado = false;
                         break;
                 }
+                System.out.println("#===========#");
+                System.out.println("Tab 1");
+                imprimirTab1();
+                System.out.println("#===========#");
+                System.out.println("Tab 2");
                 imprimirTab2();
+                System.out.println("#===========#");
+            }
+            if (vidasTablero1 <= 0 || vidasTablero2 <= 0){
+                isFinalizado = false;
             }
             contador++;
         }

@@ -20,7 +20,7 @@ public class Magdalena {
     }
 
     public void decorar() {
-        System.out.println(this.sabor);
+        System.out.println("Magdalena Tamaño " + tamaño + " y con el sabor " + sabor);
         System.out.println(this.tamaño);
     }
 }

@@ -7,6 +7,5 @@ public class Main {
         magdalena.decorar();
         magdalena.estado();
 
-
     }
 }

@@ -14,8 +14,9 @@ public class Magdalena {
     }
 
     public void estado() {
+        this.estado = "Decorado";
+        this.estado = estado;
         System.out.println("Magdalena Decorada");
-        this.estado(); = "Decorada";
     }
 
     public void decorar() {
@@ -23,4 +24,3 @@ public class Magdalena {
         System.out.println(this.tamaño);
     }
 }
-4545544poipopoghughuhjghjgjjghjghjghjhkhiufyf

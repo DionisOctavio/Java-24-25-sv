@@ -2,25 +2,39 @@ package pojo;
 
 public class Magdalena {
 
-    String tamaño;
-    String sabor;
+    private String id;
+    private String tamaño;
+    private String sabor;
+    private char decorada;
 
-    String horneado;
-    String estado;
 
-    public Magdalena(String sabor, String tamaño) {
+    public Magdalena(String id, String sabor, String tamaño, char decorada) {
+        this.id = id;
         this.sabor = sabor;
         this.tamaño = tamaño;
+        this.decorada = decorada;
     }
 
-    public void estado() {
-        System.out.println("Magdalena Decorada");
-        this.estado(); = "Decorada";
+    public String getId() {
+        return id;
     }
 
-    public void decorar() {
-        System.out.println(this.sabor);
-        System.out.println(this.tamaño);
+    public String addSabor() {
+        return sabor;
     }
+
+    public String addTamaño() {
+        return tamaño;
+    }
+
+    public char addDecorada() {
+        return decorada;
+    }
+
+    public void printMagdalena(){
+        System.out.println(id + ": Sabor: " + sabor + ", Tamaño: " + tamaño + ", Decorada: " + decorada);
+    }
+
 }
-4545544poipopoghughuhjghjgjjghjghjghjhkhiufyf
+
+

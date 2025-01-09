@@ -19,21 +19,19 @@ public class Magdalena {
         return id;
     }
 
-    public String addSabor() {
+    public String getSabor() {
         return sabor;
     }
 
-    public String addTamaño() {
+    public String getTamaño() {
         return tamaño;
     }
 
-    public char addDecorada() {
+    public char getDecorada() {
         return decorada;
     }
 
-    public void printMagdalena(){
-        System.out.println(id + ": Sabor: " + sabor + ", Tamaño: " + tamaño + ", Decorada: " + decorada);
-    }
+
 
 }
 

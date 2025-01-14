@@ -47,15 +47,14 @@ public class Almacen {
         }
     }
 
-    public void buscarProductoPorNombre(String name) {
+    public Producto buscarProductoPorNombre(String name) {
         for (int i = 0; i < contador; i++) {
+            Producto producto = lstAlmacen[i];
             if(lstAlmacen[i].getDescripcion().equalsIgnoreCase(name)) {
-                System.out.println("PRODUCTO ENCONTRADO: " + lstAlmacen[i].toString());
-                break;
-            }else{
-                System.out.println("PRODUCTO NO ENCONTRADO");
+                return producto;
             }
         }
+        return null;
     }
 
 }

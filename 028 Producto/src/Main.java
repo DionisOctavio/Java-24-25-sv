@@ -23,11 +23,14 @@ public class Main {
             pedido.agregarProducto(croasan, 1);
             pedido.agregarProducto(donut, 2);
 
-            pedido.imprimirTicket();
-
+            // pedido.imprimirTicket();
+        System.out.println("ALMACEN");
         Almacen almacen = new Almacen();
             almacen.agregarProductoAlInventario(new Producto("magdalen", 1.50, 10));
             almacen.agregarProductoAlInventario(new Producto("napolitana", 2.50, 20));
+            almacen.agregarProductoAlInventario(new Producto("croasan", 3.50, 30));
+            almacen.agregarProductoAlInventario(new Producto("donut", 4.50, 40));
+            almacen.agregarProductoAlInventario(new Producto("pastel", 5.50, 50));
 
             almacen.mostrarInventario();
 

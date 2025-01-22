@@ -3,17 +3,19 @@ package pojo;
 public class Pelicula {
 
     private String titulo;
-    private String Director;
-    private String Genero;
+    private String director;
+    private String genero;
     private int anyo;
+    public Pelicula nextPelicula;
 
     // Constructor
 
     public Pelicula(String titulo, String director, String genero, int anyo) {
         this.titulo = titulo;
-        Director = director;
-        Genero = genero;
+        this.director = director;
+        this.genero = genero;
         this.anyo = anyo;
+        this.nextPelicula = null;
     }
 
     // Metodos
@@ -21,8 +23,8 @@ public class Pelicula {
     public String toString() {
         return "Pelicula{" +
                 "titulo='" + titulo + '\'' +
-                ", Director='" + Director + '\'' +
-                ", Genero='" + Genero + '\'' +
+                ", Director='" + director + '\'' +
+                ", Genero='" + genero + '\'' +
                 ", anyo='" + anyo + '\'' +
                 '}';
     }
@@ -31,11 +33,11 @@ public class Pelicula {
 
 
     public String getDirector() {
-        return Director;
+        return director;
     }
 
     public void setDirector(String director) {
-        Director = director;
+        director = director;
     }
 
     public String getTitulo() {
@@ -47,11 +49,11 @@ public class Pelicula {
     }
 
     public String getGenero() {
-        return Genero;
+        return genero;
     }
 
     public void setGenero(String genero) {
-        Genero = genero;
+        genero = genero;
     }
 
     public int getAnyo() {

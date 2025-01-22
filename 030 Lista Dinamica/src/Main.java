@@ -16,7 +16,8 @@ public class Main {
         lista.agregarPelicula(pelicula3);
         lista.agregarPelicula(pelicula4);
 
+        lista.mostrarPeliculasLista();
 
-        lista.mostrarPeliculas();
+        lista.buscarPeliculaLista("El viaje de Chihiro");
     }
 }

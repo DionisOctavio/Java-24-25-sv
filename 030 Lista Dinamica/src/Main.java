@@ -18,6 +18,6 @@ public class Main {
 
         lista.mostrarPeliculasLista();
 
-        lista.buscarPeliculaLista("El viaje de Chihiro");
+        lista.buscarPeliculaLista("Akira");
     }
 }

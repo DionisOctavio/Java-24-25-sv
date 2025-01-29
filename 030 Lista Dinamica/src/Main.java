@@ -19,5 +19,7 @@ public class Main {
         lista.mostrarPeliculasLista();
 
         lista.buscarPeliculaLista("Akira");
+
+        lista.eliminarPelicula("Akira");
     }
 }

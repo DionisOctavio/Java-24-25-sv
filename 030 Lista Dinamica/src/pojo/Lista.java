@@ -50,4 +50,32 @@ public class Lista {
             System.out.println("No esta tu pelicula");
         }
     }
+
+    public void eliminarPelicula(String titulo){
+        if (this.primeraPelicula == null){
+            System.out.println("La lista esta vacia");
+            return;
+        }
+
+        if (titulo.equals(this.primeraPelicula.getTitulo())){
+            System.out.println("Pelicula: " + this.primeraPelicula + " eliminada");
+            primeraPelicula = primeraPelicula.nextPelicula;
+            return;
+        }
+
+        Pelicula puntero = primeraPelicula;
+
+        while (puntero.nextPelicula != null){
+            if (puntero.nextPelicula.getTitulo().equals(titulo)){
+                System.out.println("Pelicula: " + puntero.nextPelicula + " eliminada");
+                puntero.nextPelicula = puntero.nextPelicula.nextPelicula;
+                return;
+            }
+            puntero = puntero.nextPelicula;
+        }
+
+        System.out.println("Pelicula: " + titulo + " eliminada");
+
+    }
+
 }

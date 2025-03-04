@@ -5,7 +5,7 @@ import Armas.Defensa.ArmaDefensa;
 
 public abstract class Enano extends WarhammerPersonaje {
 
-    private int riqueza;
+    protected int riqueza;
 
     private int nivel;
 
@@ -14,15 +14,24 @@ public abstract class Enano extends WarhammerPersonaje {
     public Enano(String nombre, int riqueza) {
         super(nombre);
         this.riqueza = riqueza;
+        contEnanos++;
     }
 
-    public static int getContEnanos() {}
+    public static int getContEnanos() {
+        return contEnanos;
+    }
 
-    public void addArmaAtaque(ArmaAtaque arma) {}
+    public void addArmaAtaque(ArmaAtaque arma) {
+        armas.put("Ataque", arma);
+    }
 
-    public void addArmaDefensa(ArmaDefensa arma){}
+    public void addArmaDefensa(ArmaDefensa arma){
+        armas.put("Defensa", arma);
+    }
 
-    public String imprimirArmas() {}
+    public String imprimirArmas() {
+        return super.imprimirArmas();
+    }
 
 
     @Override

@@ -12,16 +12,26 @@ public abstract class PielVerde extends WarhammerPersonaje{
     public PielVerde(String nombre, String puebloNacimiento) {
         super(nombre);
         this.puebloNacimiento = puebloNacimiento;
+        contPielesVerdes++;
     }
 
-    public static int getContPielesVerdes() {}
 
-    public void addArmaAtaque(ArmaAtaque arma) {}
 
-    public void addArmaDefensa(ArmaDefensa arma){}
+    public static int getContPielesVerdes() {
+        return contPielesVerdes;
+    }
 
-    public String imprimirArmas() {}
+    public void addArmaAtaque(ArmaAtaque arma) {
+        armas.put("Ataque", arma);
+    }
 
+    public void addArmaDefensa(ArmaDefensa arma){
+        armas.put("Defensa", arma);
+    }
+
+    public String imprimirArmas() {
+        return super.imprimirArmas();
+    }
 
     @Override
     public abstract void atacar(WarhammerPersonaje victima);

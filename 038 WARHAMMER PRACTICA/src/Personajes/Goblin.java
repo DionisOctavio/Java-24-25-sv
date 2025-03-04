@@ -3,17 +3,38 @@ package Personajes;
 import Armas.Ataque.ArmaAtaque;
 import Armas.Defensa.ArmaDefensa;
 
+import java.util.ArrayList;
+
 public class Goblin  extends PielVerde{
+
+    ArrayList<Goblin> listGoblin;
 
     public Goblin(String nombre, String puebloNacimiento) {
         super(nombre, puebloNacimiento);
+        listGoblin = new ArrayList<Goblin>();
     }
 
-    public void sumarEnergia(){}
+    public ArrayList<Goblin> getListaGoblin(){
+        return listGoblin;
+    }
 
-    public void addArmaAtaque(ArmaAtaque arma){}
+    public void addGoblin(Goblin goblin){
+        listGoblin.add(goblin);
+        System.out.println("Goblin " + goblin + " agregado");
+    }
 
-    public void addArmaDefensa(ArmaDefensa arma){}
+
+    public void sumarEnergia(){
+        super.sumarEnergia();
+    }
+
+    public void addArmaAtaque(ArmaAtaque arma){
+        super.addArmaAtaque(arma);
+    }
+
+    public void addArmaDefensa(ArmaDefensa arma){
+        super.addArmaDefensa(arma);
+    }
 
     @Override
     public void atacar(WarhammerPersonaje victima) {
@@ -27,9 +48,6 @@ public class Goblin  extends PielVerde{
 
     @Override
     public String toString() {
-        return "Goblin{" +
-                "puebloNacimiento='" + puebloNacimiento + '\'' +
-                ", nombre='" + nombre + '\'' +
-                '}';
+        return "Este goblin ha nacido en " + puebloNacimiento + " No tubo una infancia facil pero logro salir adelante su nombre es Sr." + nombre;
     }
 }

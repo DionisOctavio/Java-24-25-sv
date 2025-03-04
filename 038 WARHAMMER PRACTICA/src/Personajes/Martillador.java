@@ -4,19 +4,43 @@ import Armas.Arma;
 import Armas.Ataque.ArmaAtaque;
 import Armas.Defensa.ArmaDefensa;
 
+import java.util.ArrayList;
+
 public class Martillador extends Enano{
+
+    ArrayList<Martillador> listMartillador;
 
     public Martillador(String nombre, int riqueza) {
         super(nombre, riqueza);
+        listMartillador = new ArrayList<Martillador>();
     }
 
-    public void sumarEnergia(){}
+    public ArrayList<Martillador> getListaMartillador() {
+        return listMartillador;
+    }
 
-    public void addArmaAtaque(ArmaAtaque arma){}
+    public void addMartillador(Martillador latino){
+        listMartillador.add(latino);
+        System.out.println("Martillador " + latino + " agregado");
 
-    public void addArmaDefensa(ArmaDefensa arma){}
+    }
 
-    public void atacar(PielVerde victima){}
+    public void sumarEnergia(){
+        super.sumarEnergia();
+    }
+
+    public void addArmaAtaque(ArmaAtaque arma){
+        super.addArmaAtaque(arma);
+    }
+
+    public void addArmaDefensa(ArmaDefensa arma){
+        super.addArmaDefensa(arma);
+    }
+
+    public void atacar(PielVerde victima){
+        System.out.println("Has atacado a un negro llamado: " + victima);
+        System.out.println("Se ha quedado en el suelo desangrandose y un par de gitanos lo apalean");
+    }
 
     @Override
     public void atacar(WarhammerPersonaje victima) {
@@ -30,7 +54,10 @@ public class Martillador extends Enano{
 
     @Override
     public String toString() {
-        return "Martillador{}";
+        return "Martillador{" +
+                "nombre='" + nombre + '\'' +
+                ", riqueza=" + riqueza +
+                '}';
     }
 
 }

@@ -9,12 +9,17 @@ public class Goblin  extends PielVerde{
 
     ArrayList<Goblin> listGoblin;
 
-    public Goblin(String nombre, String puebloNacimiento) {
-        super(nombre, puebloNacimiento);
+    public Goblin(String nombre, String puebloNacimiento, int nivel) {
+        super(nombre, puebloNacimiento );
+        super.nivel = nivel;
         listGoblin = new ArrayList<Goblin>();
     }
 
     public ArrayList<Goblin> getListaGoblin(){
+
+        for ( Goblin g : listGoblin ){
+            System.out.println(g);
+        }
         return listGoblin;
     }
 
@@ -43,11 +48,15 @@ public class Goblin  extends PielVerde{
 
     @Override
     public void defender(ArmaAtaque arma) {
-
+        
     }
 
     @Override
     public String toString() {
-        return "Este goblin ha nacido en " + puebloNacimiento + " No tubo una infancia facil pero logro salir adelante su nombre es Sr." + nombre;
+        return "Goblin{" +
+                "nombre='" + nombre + '\'' +
+                ", nivel=" + nivel +
+                ", puebloNacimiento='" + puebloNacimiento + '\'' +
+                '}';
     }
 }

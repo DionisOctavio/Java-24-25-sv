@@ -17,6 +17,7 @@ public abstract class WarhammerPersonaje implements ICombate{
 
     public WarhammerPersonaje(String nombre) {
         this.nombre = nombre;
+        armas = new HashMap<>();
         contPersonajes++;
     }
 

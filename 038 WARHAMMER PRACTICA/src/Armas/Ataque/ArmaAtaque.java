@@ -12,6 +12,8 @@ public class ArmaAtaque extends Arma implements IArmamentoAtaque {
     @Override
     public void atacar(WarhammerPersonaje victima) {
 
+        System.out.println("Estas atacando a " + victima);
+
     }
 
     @Override

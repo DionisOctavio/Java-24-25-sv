@@ -16,6 +16,11 @@ public class Martillador extends Enano{
     }
 
     public ArrayList<Martillador> getListaMartillador() {
+
+        for (Martillador m : listMartillador) {
+            System.out.println(m);
+        }
+
         return listMartillador;
     }
 
@@ -54,10 +59,8 @@ public class Martillador extends Enano{
 
     @Override
     public String toString() {
-        return "Martillador{" +
-                "nombre='" + nombre + '\'' +
-                ", riqueza=" + riqueza +
-                '}';
+        return "Este goblin ha obtenido todo esta riqueza " + riqueza + " La consiguio de forma honrada y limpia, su nombre es Sr." + nombre;
+
     }
 
 }

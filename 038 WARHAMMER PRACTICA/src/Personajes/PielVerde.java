@@ -11,11 +11,10 @@ public abstract class PielVerde extends WarhammerPersonaje{
 
     public PielVerde(String nombre, String puebloNacimiento) {
         super(nombre);
+        this.nivel = nivel;
         this.puebloNacimiento = puebloNacimiento;
         contPielesVerdes++;
     }
-
-
 
     public static int getContPielesVerdes() {
         return contPielesVerdes;

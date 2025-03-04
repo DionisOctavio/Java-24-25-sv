@@ -7,8 +7,26 @@ import java.util.ArrayList;
 
 public class Orco extends PielVerde {
 
+    ArrayList<PielVerde> pielesVerdes;
+
     public Orco(String nombre, String puebloNacimiento) {
         super(nombre, puebloNacimiento);
+
+        pielesVerdes = new ArrayList<>();
+    }
+
+    public ArrayList<PielVerde> getPielesVerdes() {
+
+        for (PielVerde p : pielesVerdes) {
+            System.out.println(p);
+        }
+        return pielesVerdes;
+
+    }
+
+    public void addPielverde(PielVerde p) {
+        pielesVerdes.add(p);
+        System.out.println("Pieles Verde " + p + " agregado");
     }
 
     public void addArmaAtaque(ArmaAtaque arma){}
@@ -27,6 +45,12 @@ public class Orco extends PielVerde {
 
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Orco{" +
+                "puebloNacimiento='" + puebloNacimiento + '\'' +
+                ", nivel=" + nivel +
+                ", nombre='" + nombre + '\'' +
+                '}';
+    }
 }

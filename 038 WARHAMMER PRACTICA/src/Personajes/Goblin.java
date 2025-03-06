@@ -28,7 +28,6 @@ public class Goblin  extends PielVerde{
         System.out.println("Goblin " + goblin + " agregado");
     }
 
-
     public void sumarEnergia(){
         super.sumarEnergia();
     }

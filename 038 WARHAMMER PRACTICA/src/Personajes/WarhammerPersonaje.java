@@ -10,7 +10,7 @@ public abstract class WarhammerPersonaje implements ICombate{
     protected String nombre;
     private int energia;
 
-    protected HashMap<String, Arma> armas;
+    public HashMap<String, Arma> armas;
 
     private static int contPersonajes = 0;
     private final int ENERGIA_MAX = 200;

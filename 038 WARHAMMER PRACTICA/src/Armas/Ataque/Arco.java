@@ -2,6 +2,7 @@ package Armas.Ataque;
 
 import Armas.Arma;
 import Armas.Defensa.ArmaDefensa;
+import Armas.Defensa.Casco;
 import Personajes.WarhammerPersonaje;
 
 import java.util.Random;
@@ -30,6 +31,14 @@ public class Arco extends ArmaAtaque {
             System.out.println("¡Flecha acertada!");
         } else {
             System.out.println("¡Flecha fallada!");
+        }
+
+        if (victima.armas.containsKey("Defensa")){
+
+            if (victima.armas.get("Defensa").getNombre().equalsIgnoreCase("casco")) {
+                System.out.println("¡La flecha impacta contra el casco y no causa daño!");
+                return;
+            }
         }
 
     }

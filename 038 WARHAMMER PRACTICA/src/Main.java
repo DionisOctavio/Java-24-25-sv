@@ -80,6 +80,7 @@ public class Main {
 
 
 
+
         // || --- |Nota para obtener de un 3 a un 5| --- ||
 
         Goblin gob4 = new Goblin("jose luis", "mark", 40);
@@ -147,7 +148,7 @@ public class Main {
 
         lince.atacar(gob3);
 
-
+        Goblin gob9 = new Goblin("pedro", "sevilla", 10);
 
     }
 }

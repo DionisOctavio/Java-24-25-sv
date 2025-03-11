@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ec260c9-bc32-4eea-a4d5-4ad1b7bd6938" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../039 REPASO/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../039 REPASO/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../039 REPASO/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../039 REPASO/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../039 REPASO/039 REPASO.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../039 REPASO/src/Avenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../039 REPASO/src/IronMan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../039 REPASO/src/SuperSoldado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../039 REPASO/src/Tecnologico.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../039 REPASO/src/Volador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/041 Conexion DB Interface/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/041 Conexion DB Interface/src/main/java/org/example/ConexionPostGre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/041 Conexion DB Interface/src/main/java/org/example/DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/041 Conexion DB Interface/src/main/java/org/example/Pelicula.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/041 Conexion DB Interface/src/main/java/org/example/PeliculaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/041 Conexion DB Interface/src/main/java/org/example/Singleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../untitled/src/main/java/org/example/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +23,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2uA3tC6fNZUmk5cqmVHhMWUKgSW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,7 +35,9 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/docta/Desktop/Github/Java-24-25-sv/040 REPASO BD",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -63,6 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741677765876</updated>
       <workItem from="1741677766806" duration="342000" />
+      <workItem from="1741694899399" duration="1464000" />
     </task>
     <servers />
   </component>

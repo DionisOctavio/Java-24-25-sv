@@ -21,24 +21,33 @@ public class Arco extends ArmaAtaque {
 
     @Override
     public void atacar(WarhammerPersonaje victima) {
-        super.atacar(victima);
+
+        if (!victima.armas.containsKey("Ataque") && !victima.armas.containsKey("Defensa")){
+            Random rand = new Random();
+            int ale = rand.nextInt(2);
+
+            if (ale == 0) {
+                System.out.println("La flecha ha acertado");
+            } else {
+                System.out.println("La flecha ha fallado");
+            }
+        }
+
+        if (victima.armas.containsKey("Defensa")) {
+            Arma armaDefensa = victima.armas.get("Defensa");
+            if (armaDefensa instanceof Casco) {
+                System.out.println("|SE DEFIENDE| -- La flecha impacta contra el casco y no le causara Daño → [" + victima + "]");
+            }
+        }
 
         Random rand = new Random();
 
         int ale = rand.nextInt(2);
 
-        if (ale == 1){
-            System.out.println("¡Flecha acertada!");
+        if (ale == 0) {
+            System.out.println("La flecha ha acertado");
         } else {
-            System.out.println("¡Flecha fallada!");
-        }
-
-        if (victima.armas.containsKey("Defensa")){
-
-            if (victima.armas.get("Defensa").getNombre().equalsIgnoreCase("casco")) {
-                System.out.println("¡La flecha impacta contra el casco y no causa daño!");
-                return;
-            }
+            System.out.println("La flecha ha fallado");
         }
 
     }

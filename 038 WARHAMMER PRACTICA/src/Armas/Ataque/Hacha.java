@@ -1,6 +1,10 @@
 package Armas.Ataque;
 
 import Armas.Arma;
+import Armas.Defensa.Armadura;
+import Armas.Defensa.Casco;
+import Armas.Defensa.Escudo;
+import Personajes.WarhammerPersonaje;
 
 public class Hacha extends ArmaAtaque {
 
@@ -21,4 +25,26 @@ public class Hacha extends ArmaAtaque {
                 '}';
     }
 
+    @Override
+    public void atacar(WarhammerPersonaje victima) {
+        if (victima.armas.containsKey("Defensa")) {
+            Arma armaDefensa = victima.armas.get("Defensa");
+            if (armaDefensa instanceof Escudo) {
+                System.out.println("|SE DEFIENDE| -- Al tener un Escudo se puede defender del Hacha → [" + victima + "]");
+            }
+        }
+
+        if (victima.armas.containsKey("Defensa")) {
+            Arma armaDefensa = victima.armas.get("Defensa");
+            if (armaDefensa instanceof Armadura) {
+                System.out.println("|SE DEFIENDE| -- Al tener una Armadura se puede defender del Hacha → [" + victima + "]");
+            }
+        }
+
+    }
+
+    @Override
+    public void atacar(WarhammerPersonaje victima, boolean esAtaqueEmperador) {
+        super.atacar(victima, esAtaqueEmperador);
+    }
 }

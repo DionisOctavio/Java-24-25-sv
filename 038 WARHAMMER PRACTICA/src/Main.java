@@ -149,6 +149,31 @@ public class Main {
         lince.atacar(gob3);
 
         Goblin gob9 = new Goblin("pedro", "sevilla", 10);
+        Casco gorra = new Casco("gorrin");
+        Escudo lata = new Escudo("Lata");
+        Martillo mart = new Martillo("martin");
+        Hacha hc = new Hacha("hacha");
+
+        gob9.addArmaDefensa(lata);
+
+        hc.atacar(gob9);
+        mart.atacar(gob9);
+        lince.atacar(gob9);
+
+        Goblin gob0 = new Goblin("pedro", "sevilla", 10);
+        Armadura papelin = new Armadura("papelin");
+        gob0.addArmaDefensa(papelin);
+
+        mart.atacar(gob0);
+        hc.atacar(gob0);
+
+        WarhammerPersonaje.toNumPersonajes();
+
+        // || --- |Nota para obtener de un 5 a un 8| --- ||
+
+
+
+
 
     }
 }

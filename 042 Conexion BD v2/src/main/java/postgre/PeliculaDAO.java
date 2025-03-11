@@ -12,20 +12,67 @@ public class PeliculaDAO implements DAO {
 
     @Override
     public void add(Pelicula pelicula) {
-
+        String query = "INSERT INTO pelicula (titulo, director, estudio, anio, id_genero, duracion) VALUES (?, ?, ?, ?, ?, ?)";
+        Connection conn = Singleton.getInstance().getConnection();
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setString(1, pelicula.getTitulo());
+            ps.setString(2, pelicula.getDirector());
+            ps.setString(3, pelicula.getEstudio());
+            ps.setInt(4, pelicula.getAnio());
+            ps.setInt(5,pelicula.getGenero().getId_genero());
+            ps.setInt(6,pelicula.getDuracion());
+            ps.executeUpdate();
+            System.out.println("Película agregada: " + pelicula.getTitulo());
+        } catch (SQLException e) {
+            System.out.println("Error al agregar la película: " + e.getMessage());
+        }
     }
 
     // Método para eliminar una película de la base de datos
 
     @Override
     public void delete(int id) {
-
+        String query =
+                "DELETE FROM pelicula " +
+                "WHERE id = ?";
+        Connection conn = Singleton.getInstance().getConnection();
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            System.out.println("Película eliminada con ID: " + id);
+        } catch (SQLException e) {
+            System.out.println("Error al eliminar la película: " + e.getMessage());
+        }
     }
 
     // Método para actualizar una película existente en la base de datos
 
     @Override
     public void update(Pelicula pelicula) {
+
+        String query =
+                "UPDATE pelicula SET titulo = ?, director = ?,estudio = ? , anio = ?, id_genero = ?, duracion = ? \n" +
+                "WHERE id = ?";
+
+        Connection conn = Singleton.getInstance().getConnection();
+
+        try (PreparedStatement ps = conn.prepareStatement(query)){
+
+            ps.setString(1, pelicula.getTitulo());
+            ps.setString(2, pelicula.getDirector());
+            ps.setString(3, pelicula.getEstudio());
+            ps.setInt(4, pelicula.getAnio());
+            ps.setInt(5,pelicula.getGenero().getId_genero());
+            ps.setInt(6,pelicula.getDuracion());
+            ps.setInt(7,pelicula.getId());
+            ps.executeUpdate();
+            System.out.println(pelicula.getTitulo() + "✅ Actualizada con exito [" + pelicula.toString() + "]" );
+
+        }catch (SQLException e){
+
+            System.out.println("Error al actualizar la película: " + e.getMessage());
+
+        }
 
     }
 
@@ -64,7 +111,7 @@ public class PeliculaDAO implements DAO {
                             rs.getInt("anio"), genero,
                             rs.getInt("duracion"));
 
-                    System.out.println("✅ Película encontrada: " + pelicula.toString());
+                    System.out.println(pelicula.toString());
                 } else {
                     System.out.println("⚠️ No se encontró película con ID: " + id);
                 }

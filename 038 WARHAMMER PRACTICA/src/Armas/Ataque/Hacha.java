@@ -18,12 +18,14 @@ public class Hacha extends ArmaAtaque {
         return VIDA_CONSUMIDA;
     }
 
+
     @Override
     public String toString() {
         return "Hacha{" +
                 "VIDA_CONSUMIDA=" + VIDA_CONSUMIDA +
                 '}';
     }
+
 
     @Override
     public void atacar(WarhammerPersonaje victima) {

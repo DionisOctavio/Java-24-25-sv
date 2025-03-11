@@ -8,9 +8,11 @@ public class Main {
     private static Connection conn;
     private static Statement st;
 
-    public static final String URLPostgre = "jdbc:postgresql://netflix-001.cwj7rtbm00wq.us-east-1.rds.amazonaws.com/postgres";
+    //public static final String URLPostgre = "jdbc:postgresql://netflix-001.cwj7rtbm00wq.us-east-1.rds.amazonaws.com/postgres";
+    public static final String URLPostgre = "jdbc:postgresql://127.0.0.1:5432/postgres"
     public static final String USERPostgre = "postgres";
-    public static final String PASSPostgre = "LUCASLUCAS";
+    //public static final String PASSPostgre = "LUCASLUCAS";
+    public static final String PASSPostgre = "1";
 
     public static void connect() {
         Properties properties = new Properties();

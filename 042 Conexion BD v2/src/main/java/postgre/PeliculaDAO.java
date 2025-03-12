@@ -13,6 +13,23 @@ public class PeliculaDAO implements DAO {
     @Override
     public void add(Pelicula pelicula) {
 
+        String query = "INSERT INTO pelicula (titulo, director, estudio, anio, id_genero, duracion) VALUES (?, ?, ?, ?, ?, ?)";
+        Connection con = Singleton.getInstance().getConnection();
+
+        try(PreparedStatement ps = con.prepareStatement(query)){
+            ps.setString(1, pelicula.getTitulo());
+            ps.setString(2, pelicula.getDirector());
+            ps.setString(3, pelicula.getEstudio());
+            ps.setInt(4, pelicula.getAnio());
+            ps.setInt(5,pelicula.getGenero().getId_genero());
+            ps.setInt(6,pelicula.getDuracion());
+            ps.executeUpdate();
+
+            System.out.println("Pelicula agregada con exito" + pelicula.getTitulo());
+        }catch(SQLException e){
+            System.out.println("Error al Agregar la película: " + e.getMessage());
+        }
+
     }
 
     // Método para eliminar una película de la base de datos
@@ -20,13 +37,37 @@ public class PeliculaDAO implements DAO {
     @Override
     public void delete(int id) {
 
+        String query = "DELETE FROM pelicula WHERE id = ? ";
+        Connection con = Singleton.getInstance().getConnection();
+        try(PreparedStatement ps = con.prepareStatement(query)){
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            System.out.println("Película eliminada con ID: " + id);
+        }catch (SQLException e) {
+            System.out.println("Error al Eliminar la película: " + e.getMessage());
+        }
+
     }
 
     // Método para actualizar una película existente en la base de datos
 
     @Override
     public void update(Pelicula pelicula) {
-
+        String query = "UPDATE pelicula SET titulo = ?, director = ?, estudio = ?, anio = ?, id_genero = ?, duracion = ? WHERE id = ?";
+        Connection conn = Singleton.getInstance().getConnection();
+        try (PreparedStatement ps = conn.prepareStatement(query)) {
+            ps.setString(1, pelicula.getTitulo());
+            ps.setString(2, pelicula.getDirector());
+            ps.setString(3, pelicula.getEstudio());
+            ps.setInt(4, pelicula.getAnio());
+            ps.setInt(5, pelicula.getGenero().getId_genero());
+            ps.setInt(6, pelicula.getDuracion());
+            ps.setInt(7, pelicula.getId());
+            ps.executeUpdate();
+            System.out.println("Película actualizada: " + pelicula.getTitulo());
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar la película: " + e.getMessage());
+        }
     }
 
     // Método para buscar una película por su ID

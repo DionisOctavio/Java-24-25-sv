@@ -14,7 +14,7 @@ public class Singleton {
 
     private final String URL_DB = "jdbc:postgresql://127.0.0.1:5432/postgres";
     private final String USER_DB = "postgres";
-    private final String CONTRA_DB = "1";
+    private final String CONTRA_DB = "1234";
 
     // Constructor privado para evitar múltiples instancias
     private Singleton() {

@@ -1,4 +1,6 @@
 // Depandencias necesarias
+import services.UsuarioAction;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,12 +39,14 @@ public class Controller extends HttpServlet {
 
         switch (arrayAction[0]) {
 
+            // INSTANCIAMOS EL USUARIO Y PINTAMOS LA RESPUESTA
             case "USUARIO":
-                //UsuarioAction usuarioAction = new UsuarioAction();
-                //String respUser = usuarioAction.execute(request, response);
-                //out.print(respUser);
+                UsuarioAction usuarioAction = new UsuarioAction();
+                String respUser = usuarioAction.execute(request, response);
+                out.print(respUser);
                 break;
 
+            // INSTANCIAMOS PELICULAS Y PINTAMOS LA RESPUESTA
             case "PELICULA":
                 //String resp = new PeliculaAction().execute(request, response);
                 //System.out.println(resp);

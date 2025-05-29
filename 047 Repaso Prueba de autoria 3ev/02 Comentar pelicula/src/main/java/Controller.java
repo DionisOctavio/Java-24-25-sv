@@ -1,3 +1,4 @@
+import services.CategoriaAction;
 import services.ComentarioAction;
 import services.PeliculaAction;
 import services.UsuarioAction;
@@ -49,6 +50,11 @@ public class Controller extends HttpServlet {
                 ComentarioAction comentarioAction = new ComentarioAction();
                 String respComentario = comentarioAction.execute(request, response);
                 out.print(respComentario);
+                break;
+            case "CATEGORIA":
+                CategoriaAction categoriaAction = new CategoriaAction();
+                String respCategoria = categoriaAction.execute(request, response);
+                out.print(respCategoria);
                 break;
 
         }

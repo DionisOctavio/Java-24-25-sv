@@ -120,9 +120,34 @@ public class PeliculaDAO implements DAO<Pelicula, Integer> {
     }
 
     @Override
-    public int add(Pelicula bean) {
-        return 0;
+    public int add(Pelicula pelicula) {
+        int result = 0;
+
+        // Construimos la consulta SQL, ojo con las comillas en texto
+        String sql = "INSERT INTO pelicula (titulo, anio, id_categoria) VALUES ('"
+                + pelicula.getTitulo().replace("'", "''") + "', "  // escapa comillas simples para evitar errores
+                + pelicula.getAnio() + ", "
+                + pelicula.getId_categoria() + ")";
+
+        try {
+            motorSQL.connect();
+
+            // Ejecutamos el update (insert, update, delete) con execute()
+            result = motorSQL.execute(sql);
+
+        } catch (Exception e) {
+            System.out.println("Error al añadir película: " + e.getMessage());
+        } finally {
+            motorSQL.disconnect();
+        }
+
+        return result;
     }
+
+
+
+
+
 
     @Override
     public int delete(Integer e) {

@@ -20,7 +20,7 @@ public class UsuarioDAO{
 
     public Usuario login(String user, String password){
 
-        String sql = "SELECT username, PASSWORD FROM USUARIO WHERE username = '" + user + "' AND PASSWORD = '" + password + "'";
+        String sql = "SELECT id_usuario, username, PASSWORD FROM USUARIO WHERE username = '" + user + "' AND PASSWORD = '" + password + "'";
 
         this.motorSQL.connect();
         ResultSet resultSet = this.motorSQL.executeQuery(sql);
@@ -29,6 +29,7 @@ public class UsuarioDAO{
 
             if(resultSet.next()){
                 Usuario usuario = new Usuario();
+                usuario.setId_username(resultSet.getInt("id_usuario"));
                 usuario.setUsername(resultSet.getString("username"));
                 usuario.setPassword(resultSet.getString("PASSWORD"));
                 return usuario;

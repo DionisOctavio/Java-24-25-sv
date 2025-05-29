@@ -1,16 +1,16 @@
 package services;
 
-import model.dao.UsuarioDAO;
-import model.entities.Usuario;
+import model.dao.CategoriaDAO;
+import model.dao.PeliculaDAO;
+import model.entities.Categoria;
+import model.entities.Pelicula;
+import model.factory.dbFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.Serializable;
-import model.factory.dbFactory;
+import java.util.ArrayList;
 
-public class UsuarioAction implements Action{
-
-
+public class CategoriaAction implements Action {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String cadUser = "";
@@ -24,21 +24,20 @@ public class UsuarioAction implements Action{
         String[] arrayAction = action.split("\\.");
 
         switch (arrayAction[1].toUpperCase()) {
-            case "LOGIN":
-                cadUser = login(request);
+            case "FIND_ALL":
+                cadUser = findAll(request, response);
                 break;
         }
 
         return cadUser;
     }
 
-    public String login(HttpServletRequest request) {
-        String username = request.getParameter("USER");
-        String password = request.getParameter("PASSWORD");
-
-        UsuarioDAO usuarioDAO = new UsuarioDAO(dbFactory.POSTGRES);
-        Usuario usuario = usuarioDAO.login(username, password);
-        return Usuario.fromObjectToJSON(usuario);
+    private String findAll(HttpServletRequest request, HttpServletResponse response) {
+        CategoriaDAO categoriaDAO = new CategoriaDAO(dbFactory.POSTGRES);
+        ArrayList<Categoria> categorias = categoriaDAO.findAll(null);
+        return Categoria.fromArrayToJson(categorias);
     }
+
+
 
 }

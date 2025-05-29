@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 public class Usuario {
-    private String id_username;
+    private int id_username;
     private String username;
     private String password;
 
@@ -12,11 +12,11 @@ public class Usuario {
 
     }
 
-    public String getId_username() {
+    public int getId_username() {
         return id_username;
     }
 
-    public void setId_username(String id_username) {
+    public void setId_username(int id_username) {
         this.id_username = id_username;
     }
 

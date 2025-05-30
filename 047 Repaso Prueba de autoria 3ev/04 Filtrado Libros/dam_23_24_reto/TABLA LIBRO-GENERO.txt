@@ -1,0 +1,83 @@
+
+CREATE TABLE LIBRO(
+id_libro SERIAL,
+nombre VARCHAR(150),
+CONSTRAINT PK_id_libro PRIMARY KEY (id_libro),
+CONSTRAINT CK_nombre_libro CHECK (nombre IS NOT NULL)
+);
+
+
+CREATE TABLE GENERO(
+id_genero SERIAL,
+nombre VARCHAR(50),
+CONSTRAINT PK_id_genero PRIMARY KEY (id_genero),
+CONSTRAINT CK_nombre_genero CHECK (nombre IS NOT NULL)	
+);
+
+
+CREATE TABLE LIBRO_GENERO(
+id_libro INT,
+id_genero INT,
+CONSTRAINT PK_libro_genero PRIMARY KEY (id_libro, id_genero),
+CONSTRAINT FK_libro FOREIGN KEY (id_libro) REFERENCES LIBRO(id_libro),
+CONSTRAINT FK_genero FOREIGN KEY (id_genero) REFERENCES GENERO(id_genero)
+);
+
+
+INSERT INTO LIBRO (nombre) VALUES 
+('1984'),
+('Cien años de soledad'),
+('El principito'),
+('Don Quijote de la Mancha'),
+('Orgullo y prejuicio'),
+('Matar a un ruiseñor'),
+('La sombra del viento'),
+('Los juegos del hambre'),
+('El código Da Vinci'),
+('Harry Potter y la piedra filosofal');
+
+
+INSERT INTO GENERO (nombre) VALUES
+('Ficción'),
+('Ciencia Ficción'),
+('Fantasía'),
+('Clásico'),
+('Romance'),
+('Misterio'),
+('Drama'),
+('Aventura'),
+('Juvenil'),
+('Histórico');
+
+
+-- 1984 → Ficción, Ciencia Ficción, Drama
+INSERT INTO LIBRO_GENERO VALUES (1, 1), (1, 2), (1, 7);
+
+-- Cien años de soledad → Ficción, Drama, Clásico
+INSERT INTO LIBRO_GENERO VALUES (2, 1), (2, 7), (2, 4);
+
+-- El principito → Fantasía, Aventura, Juvenil
+INSERT INTO LIBRO_GENERO VALUES (3, 3), (3, 8), (3, 9);
+
+-- Don Quijote de la Mancha → Clásico, Aventura, Histórico
+INSERT INTO LIBRO_GENERO VALUES (4, 4), (4, 8), (4, 10);
+
+-- Orgullo y prejuicio → Clásico, Romance, Drama
+INSERT INTO LIBRO_GENERO VALUES (5, 4), (5, 5), (5, 7);
+
+-- Matar a un ruiseñor → Ficción, Drama, Histórico
+INSERT INTO LIBRO_GENERO VALUES (6, 1), (6, 7), (6, 10);
+
+-- La sombra del viento → Misterio, Drama, Histórico
+INSERT INTO LIBRO_GENERO VALUES (7, 6), (7, 7), (7, 10);
+
+-- Los juegos del hambre → Ciencia Ficción, Aventura, Juvenil
+INSERT INTO LIBRO_GENERO VALUES (8, 2), (8, 8), (8, 9);
+
+-- El código Da Vinci → Misterio, Aventura, Ficción
+INSERT INTO LIBRO_GENERO VALUES (9, 6), (9, 8), (9, 1);
+
+-- Harry Potter y la piedra filosofal → Fantasía, Juvenil, Aventura
+INSERT INTO LIBRO_GENERO VALUES (10, 3), (10, 9), (10, 8);
+
+

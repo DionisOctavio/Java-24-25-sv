@@ -1,0 +1,61 @@
+CREATE TABLE USUARIO(
+id_usuario SERIAL,
+usuario VARCHAR(150),
+contrasenia VARCHAR(150),
+CONSTRAINT PK_USUARIO PRIMARY KEY (id_usuario),
+CONSTRAINT NN_USUARIO CHECK (usuario IS NOT NULL),
+CONSTRAINT UQ_USUARIO UNIQUE (usuario),
+CONSTRAINT CK_CONTRASENIA CHECK (contrasenia IS NOT NULL)
+);
+
+
+CREATE TABLE PELICULA(
+id_pelicula SERIAL,
+nombre VARCHAR(150),
+anyo INT,
+CONSTRAINT PK_PELICULA PRIMARY KEY (id_pelicula),
+CONSTRAINT NN_PELICULA CHECK (nombre IS NOT NULL),
+CONSTRAINT CK_ANYO CHECK (anyo IS NOT NULL)
+);
+
+
+CREATE TABLE COMENTARIO(
+id_comentario SERIAL,
+texto VARCHAR(150),
+id_usuario INT,
+id_pelicula INT,
+CONSTRAINT PK_COMENTARIO PRIMARY KEY (id_comentario),
+CONSTRAINT CK_TEXTO CHECK (texto IS NOT NULL),
+CONSTRAINT FK_USUARIO FOREIGN KEY (id_usuario) REFERENCES USUARIO (id_usuario),
+CONSTRAINT FK_PELICULA FOREIGN KEY (id_pelicula) REFERENCES PELICULA (id_pelicula)
+);
+
+
+
+
+-- INSERTS PARA USUARIO
+INSERT INTO USUARIO (usuario, contrasenia) VALUES 
+('octavio', '1234'),
+('ana', 'passw0rd'),
+('luis', 'contr4s3ñ4'),
+('maria', 'securepass'),
+('jorge', 'qwerty');
+
+-- INSERTS PARA PELICULA
+INSERT INTO PELICULA (nombre, anyo) VALUES 
+('El Padrino', 1972),
+('Pulp Fiction', 1994),
+('Parásitos', 2019),
+('Forrest Gump', 1994),
+('Matrix', 1999);
+
+-- INSERTS PARA COMENTARIO
+INSERT INTO COMENTARIO (texto, id_usuario, id_pelicula) VALUES 
+('Obra maestra del cine.', 1, 1),
+('Tarantino es un genio.', 2, 2),
+('Una crítica social brillante.', 3, 3),
+('Me hizo llorar y reír.', 4, 4),
+('Una revolución visual.', 5, 5),
+('La volvería a ver mil veces.', 1, 4),
+('¡Qué final!', 2, 3),
+('Demasiado buena para ser verdad.', 3, 1);

@@ -1,0 +1,21 @@
+CREATE TABLE MUSICA(
+id_musica SERIAL,
+nombre TEXT,
+CONSTRAINT PK_id_musica PRIMARY KEY (id_musica),
+CONSTRAINT CK_nombre CHECK (nombre IS NOT NULL)
+);
+
+INSERT INTO Musica (nombre) VALUES ('Despacito');
+
+
+INSERT INTO Musica (nombre) VALUES 
+('Shape of You'),
+('Bohemian Rhapsody'),
+('Stairway to Heaven'),
+('Hotel California'),
+('Blinding Lights'),
+('Imagine'),
+('Hey Jude'),
+('Billie Jean'),
+('Smells Like Teen Spirit'),
+('Wonderwall');

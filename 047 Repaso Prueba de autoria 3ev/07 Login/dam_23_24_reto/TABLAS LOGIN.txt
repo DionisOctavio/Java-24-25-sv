@@ -1,0 +1,20 @@
+CREATE TABLE USUARIO(
+id_usuario SERIAL,
+usuario VARCHAR(150),
+contrasenia VARCHAR(150),
+CONSTRAINT PK_USUARIO PRIMARY KEY (id_usuario),
+CONSTRAINT NN_USUARIO CHECK (usuario IS NOT NULL),
+CONSTRAINT UQ_USUARIO UNIQUE (usuario),
+CONSTRAINT CK_CONTRASENIA CHECK (contrasenia IS NOT NULL)
+);
+
+
+
+
+-- INSERTS PARA USUARIO
+INSERT INTO USUARIO (usuario, contrasenia) VALUES 
+('octavio', '1234'),
+('ana', 'passw0rd'),
+('luis', 'contr4s3ñ4'),
+('maria', 'securepass'),
+('jorge', 'qwerty');

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script type="module" src='js/main.js' defer></script>
+</head>
+    <body>
+        <h2>Películas</h2>
+
+        <h3>Filtrado y listado</h3>
+        <input type="text" id="buscar-titulo-input" placeholder="Buscar por título">
+        <button id="btn-buscar-titulo">Buscar</button>
+
+        <div id="categoria-buttons" style="margin-bottom: 1em;">
+        <!-- Botones de categorías irán aquí -->
+        </div>
+
+        <ul id="peliculas-list"></ul>
+
+        <h3>Agregar comentario</h3>
+        <label for="pelicula-select">Película:</label>
+        <select id="pelicula-select"></select><br><br>
+
+        <textarea id="comentario-text" rows="4" cols="50" placeholder="Escribe tu comentario"></textarea><br><br>
+
+        <button id="btn-comentar">Enviar comentario</button>
+
+        <h3>Agregar película</h3>
+        <input type="text" id="titulo-input" placeholder="Título"><br><br>
+        <input type="number" id="anio-input" placeholder="Año"><br><br>
+        <select id="categoria-select"></select><br><br>
+        <button id="btn-agregar-pelicula">Agregar Película</button>
+    </body>
+</html>

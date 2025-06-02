@@ -1,0 +1,29 @@
+CREATE TABLE CATEGORIA (
+    id_categoria INT PRIMARY KEY,
+    nombre_categoria VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE EQUIPO (
+    id_equipo INT PRIMARY KEY,
+    nombre_equipo VARCHAR(100) NOT NULL,
+    id_categoria INT NOT NULL,
+    FOREIGN KEY (id_categoria) REFERENCES CATEGORIA(id_categoria)
+);
+
+
+INSERT INTO CATEGORIA (id_categoria, nombre_categoria) VALUES (1, 'LALIGA');
+INSERT INTO CATEGORIA (id_categoria, nombre_categoria) VALUES (2, 'LALIGA HYPERMOTION');
+INSERT INTO CATEGORIA (id_categoria, nombre_categoria) VALUES (3, 'PRIMERA RFEF');
+
+
+INSERT INTO EQUIPO (id_equipo, nombre_equipo, id_categoria) VALUES (1, 'FC Barcelona', 1);
+INSERT INTO EQUIPO (id_equipo, nombre_equipo, id_categoria) VALUES (2, 'Real Madrid', 1);
+INSERT INTO EQUIPO (id_equipo, nombre_equipo, id_categoria) VALUES (3, 'Atlético de Madrid', 1);
+
+INSERT INTO EQUIPO (id_equipo, nombre_equipo, id_categoria) VALUES (4, 'Real Zaragoza', 2);
+INSERT INTO EQUIPO (id_equipo, nombre_equipo, id_categoria) VALUES (5, 'SD Huesca', 2);
+INSERT INTO EQUIPO (id_equipo, nombre_equipo, id_categoria) VALUES (6, 'Elche CF', 2);
+
+INSERT INTO EQUIPO (id_equipo, nombre_equipo, id_categoria) VALUES (7, 'CD Teruel', 3);
+INSERT INTO EQUIPO (id_equipo, nombre_equipo, id_categoria) VALUES (8, 'Nàstic de Tarragona', 3);
+INSERT INTO EQUIPO (id_equipo, nombre_equipo, id_categoria) VALUES (9, 'Sabadell', 3);

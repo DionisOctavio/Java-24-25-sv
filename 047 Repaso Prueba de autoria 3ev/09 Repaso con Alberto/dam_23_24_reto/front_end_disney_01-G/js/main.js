@@ -2,8 +2,8 @@ import { HackatonService } from './api/hackatonService.js';
 import { HackatonComponent } from './components/hackatonComponents.js';
 
 const appContainer = document.getElementById("app");
-const selectContainer = document.getElementById("categoria");
-const searchContainer = document.getElementById("nombre");
+const selectContainer = document.getElementById("categoria"); // DATO NUEVO
+const searchContainer = document.getElementById("nombre"); // DATO NUEVO
 
 async function pintar(){
 

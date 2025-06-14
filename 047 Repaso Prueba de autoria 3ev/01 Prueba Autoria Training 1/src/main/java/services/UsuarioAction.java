@@ -31,6 +31,7 @@ public class UsuarioAction implements Action {
     }
 
 
+
     public String login(HttpServletRequest req) {
         String user = req.getParameter("USER");
         String password = req.getParameter("PASSWORD");
